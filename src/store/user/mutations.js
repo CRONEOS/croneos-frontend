@@ -1,0 +1,9 @@
+
+export function setRewards (state, payload) {
+    state.rewards = payload
+}
+
+export function setDeposits (state, payload) {
+    state.deposits = payload
+}
+
