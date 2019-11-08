@@ -117,7 +117,7 @@ data () {
         {
           name: 'gass_fee',
           required: false,
-          label: 'gass fee',
+          label: 'gas fee',
           align: 'center',
           field: row => row.gass_fee,
           //format: val => `${new Date(val+'.000Z')}`,

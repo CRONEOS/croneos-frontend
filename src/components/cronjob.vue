@@ -200,6 +200,7 @@ export default {
         this.slide = "executed";
         setTimeout(() => {
           this.$emit("executed");
+          this.$store.dispatch('user/fetchRewards', this.getAccountName);
         }, 1000);
       } else {
         console.log("eee", res);

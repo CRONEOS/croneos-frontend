@@ -83,7 +83,8 @@ module.exports = function (ctx) {
         'QTime',
         'QPopupProxy',
         'QParallax',
-        'QPageScroller'
+        'QPageScroller',
+        'QSeparator'
 
       ],
 

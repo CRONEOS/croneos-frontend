@@ -16,18 +16,18 @@
 
 
 
-  <div style="max-width:1200px;margin:0 auto" class="" >
+  <div style="" class="center-page-content" >
 
     <div class="q-pa-sm text-white">
       <h5 class="text-center">Background</h5>
-      <p>Delayed transactions will be deprecated (EOSIO version xx) due to multiple issues it generates (list some of the issues). We propose CRONEOS an alternative solution for dapps being able to schedule future work. ...Align insentives by introducing an optional gass fee for processing scheduled jobs.</p>
+      <p>Delayed transactions will be deprecated (EOSIO version xx) due to multiple issues it generates (list some of the issues). We propose CRONEOS an alternative solution for dapps being able to schedule future work. ...Align insentives by introducing an optional  fee for processing scheduled jobs.</p>
     </div>
 
     <div class="row q-col-gutter-lg text-white">
       <div class="col-xs-12 col-sm-6 ">
         <div class="q-pa-sm">
           <h5 class="text-center">Developers</h5>
-          <p>easy c++ api, only pay optional gass fee if the cron job is executed successful else refund (expired, cancelled). Higher gass fees will increase your odds of on time execution. </p>
+          <p>easy c++ api, only pay optional  fee if the cron job is executed successful else refund (expired, cancelled). Higher  fees will increase your odds of on time execution. </p>
 
         </div>
       </div>
@@ -35,7 +35,6 @@
         <div class="q-pa-sm">
           <h5 class="text-center">Miners</h5>
           <p>Monetize your excess CPU by mining scheduled jobs. As a miner you earn rewards for each successful execution. See allowed fee tokens...</p>
-          <p>Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is</p>
         </div>
       </div>
 
@@ -94,7 +93,7 @@
     </div>
 
     <div class="row justify-center overflow-hidden" style="">
-        <span>Schedule jobs from whitin your contract with an easy c++ api. Pay an optional gass fee to incentivize the miners.</span>
+        <span>Schedule jobs from whitin your contract with an easy c++ api. Pay an optional  fee to incentivize the miners.</span>
     </div>
 
     <div class="row justify-center overflow-hidden" style="">
@@ -104,8 +103,8 @@
     <div class="row justify-center overflow-hidden" style="">
       <ul>
         <li>dapps submit scheduled actions to the pool</li>
-        <li>dapps pay a fee (similar to eth gass) for each scheduled job</li>
-        <li>miners execute the scheduled jobs and receive rewards (CRON token and % gass fee)</li>
+        <li>dapps pay a fee (similar to eth ) for each scheduled job</li>
+        <li>miners execute the scheduled jobs and receive rewards (CRON token and %  fee)</li>
       </ul>
     </div> -->
 

@@ -1,8 +1,7 @@
+
 export default {
 
   CLOCK: 0,
-  config:{
-    cron_contract: "piecestest12"
-  },
+  config: require("../../statics/config/jungle.json"),
   settings:false
 }

@@ -1,12 +1,12 @@
 <template>
   <q-page padding class="overflow-hidden">
-    <h5>Deposits<span class="text-caption on-right">(for gass)</span></h5>
+    <h5>Deposits<span class="text-caption on-right">(for )</span></h5>
     <deposits />
 
     <!-- content -->
     <q-input label="account" v-model="action.account" readonly/>
     <q-input label="action name" v-model="action.name" readonly/>
-    <q-input label="gass fee" v-model="gass_fee"/>
+    <q-input label="gass fee" v-model="gas_fee"/>
     <q-input label="delay sec" v-model="delay_sec"/>
     <q-input label="expiration sec" v-model="expiration_sec"/>
     <q-input label="tag" v-model="job_tag"/>
@@ -45,7 +45,7 @@ export default {
   data() {
     return {
       description:"",
-      gass_fee:'0.0001 KASDAC',
+      gas_fee:'0.0001 KASDAC',
       job_tag:'',
       expiration_date_time: '2019-11-04T21:12:10',
       due_date_time:'2019-11-04T21:12:00',
@@ -97,7 +97,7 @@ export default {
             delay_sec: this.delay_sec,
             expiration: this.expiration_date_time,
             expiration_sec: this.expiration_sec,
-            gass_fee: this.gass_fee,
+            gass_fee: this.gas_fee,
             description: this.description
           }
         }

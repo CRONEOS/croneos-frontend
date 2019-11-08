@@ -14,7 +14,6 @@
         <q-tabs shrink stretch class="q-mr-sm" indicator-color="primary" align="right">
           <q-route-tab  label="mine" to="/mine" />
           <q-route-tab  label="schedule" to="/schedule" />
-          <q-route-tab  label="rewards" to="/rewards" />
         </q-tabs>
         
         <login-btn />
@@ -53,20 +52,8 @@
       </q-page-scroller>
     </q-page-container>
 
-    <q-footer class="bg-secondary" style="height:100px">
-      <div style="border-top: 5px solid #3366FF">
-
-    <q-btn dense color="secondary" round  class="q-ml-md">
-      <q-tooltip>Visit our Telegram</q-tooltip>
-      <q-icon name="img:statics/vectors/social/001-telegram.svg" size="24px"/>
-    </q-btn>
-    <q-btn dense color="secondary" round  class="q-ml-md">
-      <q-tooltip>Visit our Github repos</q-tooltip>
-      <q-icon name="img:statics/vectors/social/027-github.svg" size="24px"/>
-    </q-btn>
-
-        
-      </div>
+    <q-footer class="bg-secondary" >
+      <footer-content />
     </q-footer>
   </q-layout>
 </template>
@@ -75,12 +62,13 @@
 import { openURL } from 'quasar';
 import { mapGetters } from "vuex";
 import loginBtn from 'components/ual/login-btn';
-
+import footerContent from 'components/footer-content';
 
 export default {
   name: 'MyLayout',
   components:{
-    loginBtn
+    loginBtn,
+    footerContent
   },
   data () {
     return {
