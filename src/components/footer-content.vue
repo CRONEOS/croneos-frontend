@@ -1,5 +1,5 @@
 <template>
-<div class=" bg-primary text-white" style="border-top: 5px solid #3366FF; min-height:200px">
+<div class=" bg-primary text-white" style="min-height:200px">
   <div class="center-page-content">
   <div  class="  row q-col-gutter-md  ">
 
@@ -19,11 +19,11 @@
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="q-pa-sm ">
           <div class="text-h6 text-weight-light q-mb-md">Follow Us</div>
-          <q-btn dense color="secondary" round  class="">
+          <!-- <q-btn dense color="secondary" round  class="">
             <q-tooltip content-class="bg-primary">Visit our Telegram</q-tooltip>
             <q-icon name="img:statics/vectors/social/001-telegram.svg" size="24px"/>
-          </q-btn>
-          <q-btn dense color="secondary" round  class="q-ml-md" @click="openURL(getConfig.social.github)">
+          </q-btn> -->
+          <q-btn dense color="secondary" round  @click="openURL(getConfig.social.github)">
             <q-tooltip content-class="bg-primary">Visit our Github repos</q-tooltip>
             <q-icon name="img:statics/vectors/social/027-github.svg" size="24px"/>
           </q-btn>

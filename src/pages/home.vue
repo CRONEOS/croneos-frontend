@@ -20,7 +20,7 @@
 
     <div class="q-pa-sm text-white">
       <h5 class="text-center">Background</h5>
-      <p>Delayed transactions will be deprecated (EOSIO version xx) due to multiple issues it generates (list some of the issues). We propose CRONEOS an alternative solution for dapps being able to schedule future work. ...Align insentives by introducing an optional  fee for processing scheduled jobs.</p>
+      <p>Delayed transactions will be deprecated (EOSIO version xx) due to multiple issues it generates (list some of the issues). We propose CRONEOS as an alternative solution for dapps being able to schedule future work. Smart contract developers can submit their scheduled tasks to an on chain pool. Miners can then execute these jobs. To align insentives we introduce an optional gas fee (multiple tokens allowed). The executer of the scheduled action will receive a (to be determined) portion of the fee as reward (see more about gas-reward model and relationship with CRON token). </p>
     </div>
 
     <div class="row q-col-gutter-lg text-white">
@@ -74,11 +74,6 @@
     <div class="q-pa-sm text-white">
       <h5 class="text-center">CRON Token</h5>
     </div>
-
-    <div class="q-pa-sm text-white">
-      <h5 class="text-center">Founders</h5>
-    </div>
-
 
 
 
