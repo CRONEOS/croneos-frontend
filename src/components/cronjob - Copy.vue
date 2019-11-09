@@ -1,21 +1,10 @@
 <template>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 " :style="{order: order}">
-    
-    <div class="overflow-hidden cronjob rounded-borders shadow-2  ">
-      
-      <div class="bg-secondary row justify-center items-center relative-position" style="height:32px">
+  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 col-xl-2" :style="{order: order}">
+    <div class="overflow-hidden cronjob rounded-borders shadow-1">
+      <div class="bg-secondary row justify-center items-center" style="height:30px">
         <img src="~assets/croneos-logo.svg" style="height:15px" />
-        <div class=" absolute-top-right q-ma-xs text-white">
-          <q-btn  v-if="slide!='job_details'" flat icon="more_vert" @click="show_job_details" size="xs" round >
-            <q-tooltip anchor="center left" self="center right" content-class="bg-primary">
-              show details
-            </q-tooltip>
-          </q-btn>
-          <q-btn  v-else flat icon="close" @click="slide='main'" size="xs" round >
-          </q-btn>
-        </div>
       </div>
-      <!-- {{cronjob.tag}} {{cronjob.owner}} -->
+      {{cronjob.tag}} {{cronjob.owner}}
       <!-- <pre>{{getTimeStats}}</pre> -->
       <!-- https://quasar.dev/options/transitions -->
       <q-carousel
@@ -23,23 +12,21 @@
         :transition-prev="carousel_transition"
         :transition-next="carousel_transition"
         animated
-        class="no-padding bg-secondary text-white"
+        control-color="red"
+        class="no-padding"
         height="150px"
-        
       >
         <q-carousel-slide name="main" class="no-padding">
           <div class="q-pa-xs full-height">
-            <div class="column items-center justify-between  full-height ">
-
-              <!-- <div class="text-caption">{{cronjob.actions[0].account}}> {{cronjob.actions[0].name}}</div> -->
-              <q-badge color="accent">{{cronjob.actions[0].account}}> {{cronjob.actions[0].name}}</q-badge>
+            <div class="column items-center justify-between  full-height">
+              <div class="text-caption">{{cronjob.actions[0].account}}> {{cronjob.actions[0].name}}</div>
 
               <div v-if="!getTimeStats.expired" class="full-width">
                 <q-linear-progress
                   v-if="getTimeStats.ms_left > 0"
                   :value="getTimeStats.progress/100"
                   size="10px"
-                  
+                  rounded
                   color="positive"
                 >
                   <q-tooltip content-class="bg-secondary">
@@ -50,7 +37,7 @@
                   v-else
                   :value="getTimeStats.progress_expired/100"
                   size="10px"
-                  
+                  rounded
                   track-color="positive"
                   color="negative"
                 
@@ -66,13 +53,9 @@
                 <div class="text-caption" >{{cronjob.description}}</div>
               </div>
 
-              <div class="row justify-between full-width q-px-sm">
-                <div v-if="!getTimeStats.expired">
-                  {{cronjob.gass_fee}}
-                </div>
-                <div >
-                  12359.0000 CRON
-                </div>
+              <div class="row justify-between full-width">
+                <div v-if="!getTimeStats.expired">{{cronjob.gass_fee}}</div>
+                <div>todo 12359.0000 CRON</div>
               </div>
 
 
@@ -108,30 +91,27 @@
         </q-carousel-slide>
         <q-carousel-slide name="executed" class="no-padding">
           <div class="column items-center justify-center full-height">
-            <q-icon name="check_circle" color="positive" />
+            <q-icon name="check_circle" />
             <span>executed</span>
           </div>
         </q-carousel-slide>
         <q-carousel-slide name="waiting_for_signature" class="no-padding" @click="slide = 'main'">
           <div class="column items-center justify-center full-height">
-            <q-spinner color="primary"/>
+            <q-spinner />
             <span>waiting for signature</span>
           </div>
         </q-carousel-slide>
         <q-carousel-slide name="transaction_error" class="no-padding">
           <div class="column items-center justify-center full-height">
-            <q-icon name="error" color="negative" />
+            <q-icon name="error" />
             <span>error</span>
           </div>
         </q-carousel-slide>
         <q-carousel-slide name="transaction_cancelled" class="no-padding">
           <div class="column items-center justify-center full-height">
-            <q-icon name="cancel" color="negative" />
+            <q-icon name="cancel" />
             <span>rejected</span>
           </div>
-        </q-carousel-slide>
-        <q-carousel-slide name="job_details" class="no-padding">
-          <cronjob-details :cronjob="cronjob" :timestats="getTimeStats"/>
         </q-carousel-slide>
       </q-carousel>
     </div>
@@ -140,12 +120,9 @@
 
 <script>
 import { mapGetters } from "vuex";
-import cronjobDetails from "components/cronjob-details";
 export default {
   name: "cronjob",
-  components:{
-    cronjobDetails
-  },
+
   props: {
     cronjob: {
       type: Object,
@@ -158,8 +135,7 @@ export default {
     return {
       order: 2,
       slide: "main",
-      carousel_transition: "fade",
-
+      carousel_transition: "fade"
     };
   },
   computed: {
@@ -256,12 +232,6 @@ export default {
       var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "";
       var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
       return dDisplay + hDisplay + mDisplay + sDisplay;
-    },
-    show_job_details(){
-      this.is_showing_job_details="true";
-      this.carousel_transition="jump-left"
-      this.slide="job_details";
-      this.carousel_transition="fade"
     }
 
 

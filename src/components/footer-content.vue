@@ -16,8 +16,11 @@
         <div class="text-h6 text-weight-light q-mb-md">Partners</div>
       </div>
     </div>
+   
     <div class="col-xs-12 col-sm-6 col-md-4">
+       
       <div class="q-pa-sm ">
+          
           <div class="text-h6 text-weight-light q-mb-md">Follow Us</div>
           <!-- <q-btn dense color="secondary" round  class="">
             <q-tooltip content-class="bg-primary">Visit our Telegram</q-tooltip>
@@ -30,7 +33,9 @@
       </div>
     </div>
   </div>
+  
   <q-separator class="q-mt-lg"/>
+
   <div>© CRONEOS 2019</div>
   </div>
   

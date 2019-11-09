@@ -1,7 +1,7 @@
 <template>
   <q-page padding class>
     <!-- content -->
-    <q-btn label="reload" color="primary" @click="$store.dispatch('cronjobs/fetchCronjobs');" class="q-mb-md"/>
+    
     <transition-group
       v-if="getCronjobs.length"
       enter-active-class="animated fadeIn"
@@ -17,6 +17,7 @@
       />
     </transition-group>
     <div v-else> No jobs</div>
+    <q-btn label="dev reload" color="primary" @click="$store.dispatch('cronjobs/fetchCronjobs');" class="q-mt-md"/>
   </q-page>
 </template>
 
