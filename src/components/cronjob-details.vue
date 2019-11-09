@@ -6,7 +6,7 @@
   <div>{{cronjob.description}}</div>
     <div>{{timestats}}</div>-->
     <q-separator />
-    <q-scroll-area :visible="true" :thumb-style="thumbStyle" style="height: 100px; width:100%">
+    <q-scroll-area :visible="true" :thumb-style="thumbStyle" style="height: 140px; width:100%">
       <q-list dense padding class="rounded-borders text-caption no-padding">
         <q-item clickable v-ripple>
           <q-item-section avatar>

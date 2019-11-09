@@ -32,7 +32,7 @@
             <div class="column items-center justify-between  full-height ">
 
               <!-- <div class="text-caption">{{cronjob.actions[0].account}}> {{cronjob.actions[0].name}}</div> -->
-              <q-badge color="accent">{{cronjob.actions[0].account}}> {{cronjob.actions[0].name}}</q-badge>
+              <q-badge color="accent">{{cronjob.actions[0].account}} > {{cronjob.actions[0].name}}</q-badge>
 
               <div v-if="!getTimeStats.expired" class="full-width">
                 <q-linear-progress

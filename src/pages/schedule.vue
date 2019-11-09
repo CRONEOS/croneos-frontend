@@ -1,6 +1,6 @@
 <template>
   <q-page padding class="overflow-hidden">
-    <h5>Deposits<span class="text-caption on-right">(for )</span></h5>
+    <h5>Deposits</h5>
     <deposits />
 
     <!-- content -->
