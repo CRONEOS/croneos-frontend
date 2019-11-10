@@ -2,8 +2,11 @@
       <div v-if="reward"  >
         <!-- {{parseReward()}} -->
         <div class="q-pa-sm bg-secondary">
-            <div>{{ reward}}</div>
-            <q-btn label="withdraw" color="primary" @click="withdraw( )" />
+            <div class="text-h6 q-mb-md">{{ reward}}</div>
+            <div class="row justify-end">
+              <q-btn label="withdraw" color="primary" @click="withdraw( )" />
+            </div>
+            
         </div>
       </div>
 </template>

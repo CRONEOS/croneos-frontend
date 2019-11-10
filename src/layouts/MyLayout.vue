@@ -44,7 +44,7 @@
   
 
 
-    <q-page-container class="text-black" style="background: #D7D6DC">
+    <q-page-container class="text-black  bg-secondary" >
 
       <router-view />
       <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
@@ -52,7 +52,10 @@
       </q-page-scroller>
     </q-page-container>
 
-    <q-footer class="bg-secondary" >
+
+
+    <q-footer class="bg-secondary footer-border-top"  >
+     
       <footer-content />
     </q-footer>
   </q-layout>
@@ -88,5 +91,7 @@ export default {
 </script>
 
 <style>
-
+.footer-border-top{
+  border-top: 5px solid  var(--q-color-primary)
+}
 </style>

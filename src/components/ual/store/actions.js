@@ -134,9 +134,9 @@ export async function parseUalError({}, error){
   let error_code ='';
   if(error.cause){
     cause = error.cause.reason || error.cause.message || 'Report this error to enhance the UX';
-    error_code = error.cause.code || error.cause.errorCode;
+    error_code = error.cause.code || error.cause.errorCode || "";
   }
-  return `${error}. ${cause} ${error_code || ""}`;
+  return `${error}. ${cause} ${error_code}`;
 }
 
 export async function hideSigningOverlay({ commit }, ms=10000) {

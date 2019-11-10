@@ -1,5 +1,5 @@
 <template>
-  <div  >
+  <div>
     <q-checkbox v-model="show_zero_balances" label="show zero balances" dense class="q-mb-sm" />
 
     <transition-group
@@ -34,7 +34,6 @@ export default {
   },
   computed: {
     ...mapGetters({
-      getAccountName: "ual/getAccountName",
       getSettings: "app/getSettings",
       getDeposits: "user/getDeposits"
     }),
@@ -61,7 +60,7 @@ export default {
     }
   },
   methods: {},
-  watch: {}
+
 };
 </script>
 

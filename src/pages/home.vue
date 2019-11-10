@@ -1,5 +1,5 @@
 <template>
-  <q-page class=" full-height bg-secondary">
+  <q-page class=" full-height">
 
     <!-- <div class="diagonal"></div> -->
     <div class="header_box">

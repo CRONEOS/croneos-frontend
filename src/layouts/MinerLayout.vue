@@ -27,8 +27,8 @@
     </q-header>
 
     <!-- (Optional) The Footer -->
-    <q-footer class="bg-secondary" style="height:100px">
-      <div>footer</div>
+    <q-footer class="bg-secondary">
+      <!-- <footer-content /> -->
     </q-footer>
 
     <!-- (Optional) A Drawer; you can add one more with side="right" or change this one's side -->
@@ -96,10 +96,12 @@
 <script>
 import { mapGetters } from "vuex";
 import loginBtn from 'components/ual/login-btn';
+// import footerContent from 'components/footer-content';
 export default {
   // name: 'LayoutName',
   components:{
-    loginBtn
+    loginBtn,
+    // footerContent
   },
   data () {
     return {

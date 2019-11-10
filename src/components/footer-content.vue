@@ -1,9 +1,9 @@
 <template>
-<div class=" bg-primary text-white" style="min-height:200px">
+<div class="text-white" style="min-height:200px">
   <div class="center-page-content">
   <div  class="  row q-col-gutter-md  ">
 
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div :class="colsetup">
       <div class="q-pa-sm">
         
         <div class="text-h6 q-mb-md">
@@ -11,13 +11,16 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div :class="colsetup">
       <div class="q-pa-sm">
-        <div class="text-h6 text-weight-light q-mb-md">Partners</div>
+        <div class="text-h6 text-weight-light q-mb-md">Sponsors & Partners</div>
+        <img  src="statics/vectors/eosdac-rec-white.svg" style="height:36px" class="cursor-pointer" @click="openURL('https://eosdac.io')"/>
+
+        </img>
       </div>
     </div>
    
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div :class="colsetup">
        
       <div class="q-pa-sm ">
           
@@ -49,7 +52,9 @@ import { openURL } from "quasar";
 export default {
   // name: 'ComponentName',
   data() {
-    return {};
+    return {
+      colsetup: "col-xs-12 col-sm-6 col-md-4"
+    };
   },
   computed: {
     ...mapGetters({

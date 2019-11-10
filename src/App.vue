@@ -63,7 +63,7 @@ export default {
     getAccountName: {
       immediate: true,
       handler(newVal, oldVal) {
-        if(this.getAccountName){
+        if(this.getAccountName != undefined){
           this.$store.dispatch('user/loggedInRoutine', {accountname: this.getAccountName});
         }
         else{
