@@ -32,9 +32,9 @@
           </q-item-section>
           <q-item-section class="no-wrap">{{cronjob.actions[0].name}}</q-item-section>
           <q-item-section avatar>
-            <q-btn size="sm" dense icon="check" round >
-              <q-tooltip content-class="bg-primary">
-                show action data
+            <q-btn size="sm" dense icon="ballot" flat color="white" round @click="showActionData">
+              <q-tooltip content-class="bg-primary" :delay="500">
+                console log action data
               </q-tooltip>
             </q-btn>
           </q-item-section>
@@ -85,6 +85,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   // name: 'ComponentName',
   props: {
@@ -101,6 +102,11 @@ export default {
       }
     }
   },
+  computed: {
+    ...mapGetters({
+
+    }),
+  },
   data() {
     return {
       thumbStyle: {
@@ -112,6 +118,15 @@ export default {
       }
     };
   },
-  methods: {}
+  methods: {
+    async showActionData(){
+      console.log('\n', this.cronjob.actions[0].account, ' > ', this.cronjob.actions[0].name)
+      const contract = await this.$eos.getContract(this.cronjob.actions[0].account);
+      let r = await this.$eos.Serialize.deserializeAction(contract, this.cronjob.actions[0].account, this.cronjob.actions[0].name, this.cronjob.actions[0].authorization, this.cronjob.actions[0].data );
+      console.log( JSON.stringify(r,null,2));
+      ; 
+
+    }
+  }
 };
 </script>
