@@ -2,7 +2,7 @@
   <q-page padding>
     <!-- {{rewards}} -->
     <div  class="row q-col-gutter-lg text-white" >
-      <reward-balance :reward="reward.adj_p_balance" v-for="(reward,i) in getRewards" :key="`reward${i}`"/>
+      <reward-balance :reward="reward.adj_p_balance" v-for="(reward,i) in getRewards" :key="`reward${i}`" class="col-xs-12 col-sm-4 col-md-3 col-lg-2"/>
     </div>
 
   </q-page>
@@ -11,7 +11,7 @@
 <script>
 
 import { mapGetters } from "vuex";
-import rewardBalance from 'components/reward-balance';
+import rewardBalance from 'components/reward/reward-balance';
 export default {
   // name: 'PageName',
   components: {

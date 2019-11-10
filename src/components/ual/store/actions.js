@@ -75,6 +75,7 @@ export async function transact({ state, dispatch, commit }, payload) {
   if(!disable_signing_overlay){
     commit('setSigningOverlay', {show: true, status:0, msg: 'Waiting for Signature'});
   }
+  commit('setIsTransacting', true);
   
   let user = state.activeAuthenticator.users[0];
   //add authorization to actions if not supplied
@@ -86,16 +87,17 @@ export async function transact({ state, dispatch, commit }, payload) {
   console.log(JSON.stringify(payload.actions, null, 2) );
   //sign
   try{
+    console.log('trying to push trx')
     let res = await user.signTransaction(
       { actions: payload.actions },
       { broadcast: true }
     );
-    console.log(res);
+    
     if(!disable_signing_overlay){
       commit('setSigningOverlay', { show: true, status: 1, msg: 'Transaction Successful'});
       dispatch('hideSigningOverlay', 1000);
     }
-
+    commit('setIsTransacting', false);
     return res;
   }catch(e){
     // console.log(e, e.cause);
@@ -103,7 +105,7 @@ export async function transact({ state, dispatch, commit }, payload) {
       commit('setSigningOverlay', { show: true, status: 2, msg: await dispatch('parseUalError', e) });
       dispatch('hideSigningOverlay', 2000);
     }
-
+    commit('setIsTransacting', false);
     return e.cause;
   }
 }

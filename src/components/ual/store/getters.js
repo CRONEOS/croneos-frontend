@@ -6,6 +6,10 @@ export function getSigningOverlay(state) {
     return state.signingOverlay;
 }
 
+export function getIsTransacting(state) {
+    return state.isTransacting;
+}
+
 export function getActiveAuthenticator(state) {
     return state.activeAuthenticator;
 }

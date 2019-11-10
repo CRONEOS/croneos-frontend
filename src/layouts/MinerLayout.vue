@@ -85,7 +85,7 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container style="background: #D7D6DC">
+    <q-page-container style="background: #3B3B3B">
       <!-- This is where pages get injected -->
       <router-view />
     </q-page-container>

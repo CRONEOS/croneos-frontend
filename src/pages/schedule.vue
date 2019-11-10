@@ -1,8 +1,7 @@
 <template>
   <q-page padding class="overflow-hidden">
-    <h5>Deposits</h5>
-    <deposits />
-
+    <h5>Schedule</h5>
+    <scheduler />
     <!-- content -->
     <q-input label="account" v-model="action.account" readonly/>
     <q-input label="action name" v-model="action.name" readonly/>
@@ -35,12 +34,14 @@ const { addToDate } = date
 
 import { mapGetters } from "vuex";
 import cronjobsTable from "components/cronjobs-table";
-import deposits from "components/deposits";
+import deposits from "components/deposit/deposits";
+import scheduler from "components/scheduler/scheduler";
 export default {
   // name: 'PageName',
   components: {
     cronjobsTable,
-    deposits
+    deposits,
+    scheduler
   },
   data() {
     return {
@@ -97,7 +98,7 @@ export default {
             delay_sec: this.delay_sec,
             expiration: this.expiration_date_time,
             expiration_sec: this.expiration_sec,
-            gass_fee: this.gas_fee,
+            gas_fee: this.gas_fee,
             description: this.description
           }
         }

@@ -1,6 +1,7 @@
 export default {
   //
   showLoginModal: false,
+  isTransacting: false,
   signingOverlay:{
     show: false,
     status:'', //0=wait for sig, 1=success, 2=error

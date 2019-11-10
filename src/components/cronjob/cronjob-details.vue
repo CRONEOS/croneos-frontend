@@ -2,7 +2,7 @@
   <div>
     
     <!-- {{cronjob.owner}}
-  {{cronjob.gass_fee}}
+  {{cronjob.gas_fee}}
   <div>{{cronjob.description}}</div>
     <div>{{timestats}}</div>-->
     <q-separator />
@@ -26,7 +26,7 @@
           <q-item-section avatar>
             <q-icon color="primary" name="account_circle" />
           </q-item-section>
-          <q-item-section>{{cronjob.gass_fee}}</q-item-section>
+          <q-item-section>{{cronjob.gas_fee}}</q-item-section>
         </q-item>
 
         <q-item v-for="i in 20" clickable v-ripple :key="i">

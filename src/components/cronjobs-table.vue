@@ -115,11 +115,11 @@ data () {
           sortable: false
         },
         {
-          name: 'gass_fee',
+          name: 'gas_fee',
           required: false,
           label: 'gas fee',
           align: 'center',
-          field: row => row.gass_fee,
+          field: row => row.gas_fee,
           //format: val => `${new Date(val+'.000Z')}`,
           sortable: true
         },

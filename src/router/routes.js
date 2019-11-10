@@ -22,7 +22,9 @@ const routes = [
     component: () => import('layouts/ScheduleLayout.vue'),
     children: [
       { path: '', component: () => import('pages/schedule.vue') },
-      { path: 'developers', component: () => import('pages/developers.vue') }
+      { path: 'developers', component: () => import('pages/developers.vue') },
+      { path: 'deposits', component: () => import('pages/deposits.vue') }
+
     ]
   },
   

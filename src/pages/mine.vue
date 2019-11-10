@@ -23,7 +23,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import cronjob from "components/cronjob";
+import cronjob from "components/cronjob/cronjob";
 export default {
   // name: 'PageName',
   components: {

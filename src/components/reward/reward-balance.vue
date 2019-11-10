@@ -1,5 +1,5 @@
 <template>
-      <div v-if="reward" class="col-xs-12 col-sm-6 col-md-4" >
+      <div v-if="reward"  >
         <!-- {{parseReward()}} -->
         <div class="q-pa-sm bg-secondary">
             <div>{{ reward}}</div>

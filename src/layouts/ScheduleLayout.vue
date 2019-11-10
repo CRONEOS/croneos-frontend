@@ -51,6 +51,16 @@
           </q-item-section>
         </q-item>
 
+        <q-item clickable to="/schedule/deposits" exact>
+          <q-item-section avatar>
+            <q-icon  name="ion-logo-usd" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Deposits</q-item-label>
+            <q-item-label caption>can be used for gas</q-item-label>
+          </q-item-section>
+        </q-item>
+
 
 
         <q-item clickable to="/schedule/developers" exact>

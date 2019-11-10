@@ -1,7 +1,7 @@
 <template>
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 " :style="{order: order}">
     
-    <div class="overflow-hidden cronjob rounded-borders shadow-2  ">
+    <div class="overflow-hidden cronjob rounded-borders   ">
       
       <div class="bg-secondary row justify-center items-center relative-position" style="height:32px">
         <img src="~assets/croneos-logo.svg" style="height:15px" />
@@ -13,6 +13,7 @@
           </q-btn>
           <q-btn  v-else flat icon="close" @click="slide='main'" size="xs" round >
           </q-btn>
+          {{getIsTransacting}}
         </div>
       </div>
       <!-- {{cronjob.tag}} {{cronjob.owner}} -->
@@ -68,7 +69,7 @@
 
               <div class="row justify-between full-width q-px-sm">
                 <div v-if="!getTimeStats.expired">
-                  {{cronjob.gass_fee}}
+                  {{cronjob.gas_fee}}
                 </div>
                 <div >
                   12359.0000 CRON
@@ -140,7 +141,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import cronjobDetails from "components/cronjob-details";
+import cronjobDetails from "components/cronjob/cronjob-details";
 export default {
   name: "cronjob",
   components:{
@@ -165,7 +166,8 @@ export default {
   computed: {
     ...mapGetters({
       getAccountName: "ual/getAccountName",
-      getCLOCK: "app/getCLOCK"
+      getCLOCK: "app/getCLOCK",
+      getIsTransacting: "ual/getIsTransacting"
     }),
     getTimeStats() {
       let stats = {
@@ -231,7 +233,7 @@ export default {
           this.$store.dispatch('user/fetchRewards', this.getAccountName);
         }, 1000);
       } else {
-        console.log("eee", res);
+
         if (res.code == 402) {
           this.slide = "transaction_cancelled";
         } else {
