@@ -13,7 +13,6 @@
           </q-btn>
           <q-btn  v-else flat icon="close" @click="slide='main'" size="xs" round >
           </q-btn>
-          {{getIsTransacting}}
         </div>
       </div>
       <!-- {{cronjob.tag}} {{cronjob.owner}} -->
@@ -85,18 +84,19 @@
                     color="primary"
                     @click="executeJob(cronjob.id)"
                     class="full-width"
+                    :disabled="getIsTransacting"
                   />
                   <q-btn
                     v-else
                     label="waiting"
                     flat
                     color="negative"
-                    @click=""
                     class="full-width"
                   />
                 </div>
                 <div v-else>
                   <q-btn
+                    :disabled="getIsTransacting"
                     label="delete"
                     color="negative"
                     @click="executeJob(cronjob.id)"

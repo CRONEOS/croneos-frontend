@@ -3,7 +3,7 @@ export function setShouldRenderLoginModal(state, payload) {
 }
 
 export function setIsTransacting(state, payload) {
-    state.isTransacting = true;
+    state.isTransacting = payload;
 }
 
 export function setSigningOverlay(state, payload) {

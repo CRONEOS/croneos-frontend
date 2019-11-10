@@ -1,3 +1,5 @@
+import {notifyError} from '../../../imports/notifications.js';
+
 export async function renderLoginModal({ state, commit, dispatch, getters }) {
   
   
@@ -66,6 +68,7 @@ export async function attemptAutoLogin({state, commit, dispatch}){
 }
 
 export async function transact({ state, dispatch, commit }, payload) {
+
   const disable_signing_overlay = payload.disable_signing_overlay || false;
   //check if logged in before transacting
   if(!state.activeAuthenticator || !state.accountName){
@@ -106,18 +109,34 @@ export async function transact({ state, dispatch, commit }, payload) {
       dispatch('hideSigningOverlay', 2000);
     }
     commit('setIsTransacting', false);
+    notifyError(await dispatch('parseUalError', e))
     return e.cause;
   }
+  // let res = await user.signTransaction(
+  //   { actions: payload.actions },
+  //   { broadcast: true }
+  // )
+  // .then(res => {
+    
+  //   return res;
+  // })
+  // .catch(e =>{
+  //   console.log('catch block');
+  //   console.log(e, e.cause);
+  //   return e;
+  // })
+  // commit('setIsTransacting', false);
+  // return res;
 }
 
 export async function parseUalError({}, error){
   let cause = 'unknown cause';
   let error_code ='';
   if(error.cause){
-    cause = error.cause.reason || error.cause.message || 'Report this error to the eosdac devs to enhance the UX';
+    cause = error.cause.reason || error.cause.message || 'Report this error to enhance the UX';
     error_code = error.cause.code || error.cause.errorCode;
   }
-  return `${error}. ${cause} ${error_code}`;
+  return `${error}. ${cause} ${error_code || ""}`;
 }
 
 export async function hideSigningOverlay({ commit }, ms=10000) {
