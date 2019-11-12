@@ -36,4 +36,8 @@ export function getAccountName(state) {
     return state.accountName;
 }
 
+export function getActiveNetwork(state) {
+    return state.SESSION.network || state.activeNetwork;
+}
+
 

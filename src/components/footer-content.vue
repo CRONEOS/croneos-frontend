@@ -8,15 +8,22 @@
         
         <div class="text-h6 q-mb-md">
           <img  src="~assets/croneos-logo-white.svg" style="height:14px" class="cursor-pointer"/>
+          <router-link to="/mine" tag="a" class="text-link text-caption" style="display:block">
+            Start Mining
+          </router-link>
+          <router-link to="/schedule" tag="a" class="text-link text-caption" style="display:block">
+            Schedule
+          </router-link>
+          <router-link to="/schedule/developers" tag="a" class="text-link text-caption" style="display:block">
+            Developers
+          </router-link>
         </div>
       </div>
     </div>
     <div :class="colsetup">
       <div class="q-pa-sm">
         <div class="text-h6 text-weight-light q-mb-md">Sponsors & Partners</div>
-        <img  src="statics/vectors/eosdac-rec-white.svg" style="height:36px" class="cursor-pointer" @click="openURL('https://eosdac.io')"/>
-
-        </img>
+        <img  src="statics/vectors/eosdac-rec-white.svg" style="height:36px" class="cursor-pointer" @click="openURL('https://eosdac.io')">
       </div>
     </div>
    
@@ -39,7 +46,7 @@
   
   <q-separator class="q-mt-lg"/>
 
-  <div>© CRONEOS 2019</div>
+  <div class="row justify-end">© CRONEOS 2019</div>
   </div>
   
 

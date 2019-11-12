@@ -1,7 +1,35 @@
 import {notifyError} from '../../../imports/notifications.js';
 
+import { UAL } from "universal-authenticator-library";
+import { Scatter } from 'ual-scatter';
+import { Ledger } from 'ual-ledger';
+import { Lynx } from 'ual-lynx';
+import { TokenPocket } from 'ual-token-pocket';
+import { EOSIOAuth } from 'ual-eosio-reference-authenticator';
+
+export async function initUAL({ state, commit, dispatch, getters }, network) {
+  let appName="croneos";
+  let chains = [state.networks[getters.getActiveNetwork].config];
+  console.log('init ual with', chains)
+  let authenticators = [
+    new Scatter(chains, {appName: appName}),
+    new Ledger(chains),
+    new Lynx(chains, { appName: appName }),
+    new TokenPocket(chains),
+    new EOSIOAuth(chains, { appName, protocol: 'eosio' })
+  ];
+  let ual = new UAL(
+    chains,
+    appName,
+    authenticators
+  );
+
+  console.log("UAL", ual);
+  commit("setUAL", ual);
+}
+
+
 export async function renderLoginModal({ state, commit, dispatch, getters }) {
-  
   
   console.log("available authenticators", getters.getAuthenticators)
   for (var i = 0; i < getters.getAuthenticators; i++) {
@@ -22,7 +50,7 @@ export async function logout({ state, commit, dispatch }) {
       console.log('Logged out!')
       commit("setActiveAuthenticator", false);
       commit("setAccountName", false);
-      commit("setSESSION", {accountName:null, authenticatorName: null});
+      commit("setSESSION", {accountName:null, authenticatorName: null, network: null});
     }).catch(e => {console.log(`An error occured while attempting to logout from authenticator: ${activeAuth.getStyle().text}`)});
   }
   else{

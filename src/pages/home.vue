@@ -16,12 +16,15 @@
 
 
 
-  <div style="" class="center-page-content" >
+  <div  class="center-page-content" >
 
     <div class="q-pa-sm text-white">
       <h5 class="text-center">Background</h5>
-      <p>The project is currently in development. Stay tuned.</p>
-      <p>Delayed transactions will be deprecated (EOSIO version xx) due to multiple issues it generates (list some of the issues). We propose CRONEOS as an alternative solution for dapps being able to schedule future work. Smart contract developers can submit their scheduled tasks to an on chain pool. Miners can then execute these jobs. To align incentives we introduce an optional gas fee (multiple tokens allowed). The executer of the scheduled action will receive a (to be determined) portion of the fee as reward (see more about gas-reward model and relationship with CRON token). </p>
+
+      <p>Delayed transactions will be deprecated (EOSIO version xx) due to multiple issues it generates (list some of the issues). We propose CRONEOS as an alternative solution for enabling dapps to schedule future work. Smart contract developers can submit their scheduled tasks to an on chain pool. Miners can then execute these jobs. To align incentives we introduce an optional gas fee (multiple tokens allowed). The executer of the scheduled action will receive a (to be determined) portion of the fee as reward (see more about gas-reward model and relationship with CRON token). </p>
+
+      <p>The project is currently in development.</p>
+      <p>Croneos is looking for contributers (design infographics, website, community management, ...).</p>
       
     </div>
 
@@ -29,8 +32,11 @@
       <div class="col-xs-12 col-sm-6 ">
         <div class="q-pa-sm">
           <h5 class="text-center">Developers</h5>
-          <p>easy c++ api, only pay optional  fee if the cron job is executed successful else refund (expired, cancelled). Higher  fees will increase your odds of on time execution. </p>
-
+          <p>Smart contract devs can integrate croneos by including a single header file (c++). only pay optional  fee if the cron job is executed successful else refund (expired, cancelled). Higher fees will increase your odds of on time execution.</p>
+          <router-link to="/schedule/developers" tag="a" class="text-link">
+            See examples
+          </router-link>
+          
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 ">
@@ -42,7 +48,23 @@
 
     </div>
   
+    <div class="q-pa-sm text-white">
+      <h5 class="text-center">Aligning Incentives with Gas</h5>
+      <p>Although paying gas is optional we believe it will increase the probability of on time execution. The executer of your scheduled action will be rewarded with 50% (to be determined) of the gas and additional CRON tokens.  Currently the CRONEOS smart contract only accepts the following gas tokens:</p>
+      <div class="row">
+        <div v-for="token in getAllowedFeeTokens" class="q-mr-sm"> {{token.sym}}</div>
+      </div>
 
+      <router-link to="/gas-tokens" tag="a" class="text-link">
+        Apply for listing your token
+      </router-link>
+    </div>
+
+
+    <div class="q-pa-sm text-white">
+      <h5 class="text-center">CRON Token</h5>
+    </div>
+    <p>CRON</p>
     <div class="row q-col-gutter-lg text-white q-pa-sm">
       <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="q-pa-sm bg-primary">
@@ -73,9 +95,6 @@
 
     </div>
 
-    <div class="q-pa-sm text-white">
-      <h5 class="text-center">CRON Token</h5>
-    </div>
 
 
 
@@ -130,7 +149,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      getAccountName: "ual/getAccountName"
+      getAccountName: "ual/getAccountName",
+      getAllowedFeeTokens: "app/getAllowedFeeTokens"
     })
   },
   methods: {

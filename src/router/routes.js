@@ -5,7 +5,9 @@ const routes = [
     component: () => import('layouts/MyLayout.vue'),
     children: [
       { path: '', component: () => import('pages/home.vue') },
-      { path: 'rewards', component: () => import('pages/rewards.vue') }
+      { path: 'gas-tokens', component: () => import('pages/gas-tokens.vue') }
+
+      
     ]
   },
   {

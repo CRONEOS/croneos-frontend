@@ -15,8 +15,8 @@
           <q-route-tab  label="mine" to="/mine" />
           <q-route-tab  label="schedule" to="/schedule" />
         </q-tabs>
-        
-        <login-btn />
+        <login-network-switcher />
+        <!-- <login-btn /> -->
           <!-- <q-btn
             style="height:32px; width:140px"
             v-if="!getAccountName"
@@ -37,14 +37,13 @@
             </q-list>
           </q-btn-dropdown> -->
 
-        
       </q-toolbar>
     </q-header>
 
   
 
 
-    <q-page-container class="text-black  bg-secondary" >
+    <q-page-container class=" text-white bg-secondary" >
 
       <router-view />
       <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
@@ -65,13 +64,15 @@
 import { openURL } from 'quasar';
 import { mapGetters } from "vuex";
 import loginBtn from 'components/ual/login-btn';
+import loginNetworkSwitcher from 'components/ual/login-network-switcher';
 import footerContent from 'components/footer-content';
 
 export default {
   name: 'MyLayout',
   components:{
     loginBtn,
-    footerContent
+    footerContent,
+    loginNetworkSwitcher
   },
   data () {
     return {
@@ -86,6 +87,7 @@ export default {
   },
   methods: {
     openURL
+
   }
 }
 </script>

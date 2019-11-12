@@ -48,6 +48,10 @@
   border-bottom-left-radius: 4px;
 }
 
+.round{
+  border-radius: 50%;
+}
+
 .q-pr-xxl{
   padding-right:80px;
 }
@@ -64,3 +68,25 @@ textarea {resize: none!important}
   max-width:1200px;
   margin:0 auto;
 }
+
+ /* unvisited link */
+.text-link {
+  color: $primary;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+/* visited link */
+.text-link:visited {
+  color: $primary;
+}
+
+/* mouse over link */
+.text-link:hover {
+  color: #fff;
+}
+
+/* selected link */
+.text-link:active {
+  color: $primary;
+} 

@@ -27,6 +27,10 @@ export function setAccountName(state, payload) {
     state.accountName = payload;
 }
 
+export function setActiveNetwork(state, payload) {
+    state.activeNetwork = payload;
+}
+
 
 
 

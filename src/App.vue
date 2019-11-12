@@ -1,6 +1,6 @@
 <template>
   <div id="q-app">
-    <ual :appName= "appName" :chains="chains" :authenticators="authenticators"/>
+    <ual :appName= "appName" :chains="chains" :authenticators="authenticators" ref="ual-component"/>
     <router-view />
   </div>
 </template>
@@ -11,7 +11,7 @@ import { Scatter } from 'ual-scatter';
 import { Ledger } from 'ual-ledger';
 import { Lynx } from 'ual-lynx';
 import { TokenPocket } from 'ual-token-pocket';
-import { EOSIOAuth } from 'ual-eosio-reference-authenticator'
+import { EOSIOAuth } from 'ual-eosio-reference-authenticator';
 
 
 
@@ -57,7 +57,10 @@ export default {
     })
   },
   mounted(){
-    this.$store.dispatch('app/initRoutine')
+    this.$store.dispatch('app/initRoutine');
+  },
+  created () {
+    this.$q.addressbarColor.set('#3366FF');
   },
   watch: {
     getAccountName: {

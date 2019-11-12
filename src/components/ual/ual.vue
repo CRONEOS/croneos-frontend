@@ -104,7 +104,8 @@ export default {
     ...mapGetters({
       getShouldRenderLoginModal: "ual/getShouldRenderLoginModal",
       getActiveAuthenticator: "ual/getActiveAuthenticator",
-      getAuthenticators: "ual/getAuthenticators"
+      getAuthenticators: "ual/getAuthenticators",
+      getActiveNetwork: "ual/getActiveNetwork"
     })
   },
   methods: {
@@ -139,7 +140,8 @@ export default {
         const account_name = await users[0].getAccountName();
         this.$store.commit("ual/setSESSION", {
           accountName: account_name,
-          authenticatorName: authenticator_name
+          authenticatorName: authenticator_name,
+          network: this.getActiveNetwork
         });
         this.$store.commit("ual/setAccountName", account_name);
         this.$store.commit("ual/setActiveAuthenticator", authenticator);
@@ -163,17 +165,14 @@ export default {
       this.bar_msg = this.error_msg = this.accountname = "";
       this.slide = "wallet_selection";
     }
+
   },
   mounted() {
-    this.ual = new UAL(
-      this.chains,
-      this.appName,
-      this.authenticators
-    );
-    console.log("UAL", this.ual);
-    this.$store.commit("ual/setUAL", this.ual);
+    this.$store.dispatch("ual/initUAL");
     this.$store.dispatch("ual/attemptAutoLogin");
   },
+
+
 
   watch: {
     error_msg: function(newv, oldv) {

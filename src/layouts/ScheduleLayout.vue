@@ -19,7 +19,7 @@
         <q-toolbar-title>
           
         </q-toolbar-title>
-        <login-btn />
+        <login-network-switcher />
       </q-toolbar>
 
     </q-header>
@@ -98,11 +98,11 @@
 
 <script>
 import { mapGetters } from "vuex";
-import loginBtn from 'components/ual/login-btn';
+import loginNetworkSwitcher from 'components/ual/login-network-switcher';
 export default {
   // name: 'LayoutName',
   components:{
-    loginBtn
+    loginNetworkSwitcher
   },
   data () {
     return {

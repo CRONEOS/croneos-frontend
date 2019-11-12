@@ -4,11 +4,11 @@
             <div class="text-h6 q-mb-md">{{ feetoken.balance}}</div>
 
             <div class="row justify-between">
-              <q-btn  label="refund" color="primary" @click="withdraw" />
-              <q-btn label="add" color="positive" @click="is_adding_balance=true" />
+              <q-btn  :disabled="getIsTransacting" label="refund" color="primary" @click="withdraw" />
+              <q-btn :disabled="getIsTransacting" label="add" color="positive" @click="is_adding_balance=true" />
             </div>
-            <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" mode="out-in">
-              <div v-if="is_adding_balance" class="row justify-between items-center absolute-bottom bg-secondary q-ma-sm" >
+            <transition enter-active-class="animated fadeIn"  mode="out-in">
+              <div v-if="is_adding_balance && !getIsTransacting" class="row justify-between items-center absolute-bottom bg-secondary q-ma-sm" >
                 <q-input autofocus type="number" dense  filled v-model="amount_to_add"  style="height:35px; width:120px" class="bg-white">
                     <template v-slot:append>
                       <q-icon name="close" color="negative" @click="is_adding_balance=false " class="cursor-pointer" style="margin-right:-5px"/>
@@ -16,6 +16,15 @@
                 </q-input>
                 <q-btn label="ok" color="positive" @click="addBalance " />
               </div>
+
+              <div v-if="getIsTransacting && is_adding_balance" class="row justify-between items-center absolute-bottom bg-secondary q-ma-sm" >
+                <div>
+                  <q-spinner color="primary"/>
+                  <span class="q-ml-sm">waiting</span>
+                </div>
+                <q-btn label="ok" color="positive" @click="addBalance " />
+              </div>
+
             </transition>
             
         </div>
@@ -43,13 +52,14 @@ export default {
   computed: {
     ...mapGetters({
       getAccountName: "ual/getAccountName",
-      getConfig: "app/getConfig"
+      getConfig: "app/getConfig",
+      getIsTransacting: "ual/getIsTransacting"
     })
   },
   methods:{
     async addBalance(){
       if(parseFloat(this.amount_to_add) <= 0 || this.amount_to_add==null) return;
-      this.is_adding_balance=false;
+      
       
       let actions = [
         {
@@ -64,7 +74,8 @@ export default {
         }
       ];
       this.amount_to_add=null;
-      let res = await this.$store.dispatch("ual/transact", { actions: actions });
+      let res = await this.$store.dispatch("ual/transact", { actions: actions, disable_signing_overlay: true });
+      this.is_adding_balance=false;
       if(res){
         this.callback();
       }

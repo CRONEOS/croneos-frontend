@@ -20,8 +20,7 @@
           
         </q-toolbar-title>
 
-        
-        <login-btn />
+        <login-network-switcher />
       </q-toolbar>
 
     </q-header>
@@ -95,18 +94,19 @@
 
 <script>
 import { mapGetters } from "vuex";
-import loginBtn from 'components/ual/login-btn';
+import loginNetworkSwitcher from 'components/ual/login-network-switcher';
 // import footerContent from 'components/footer-content';
 export default {
   // name: 'LayoutName',
   components:{
-    loginBtn,
+    loginNetworkSwitcher,
     // footerContent
   },
   data () {
     return {
       leftDrawer: true,
-      miniDrawerState: true
+      miniDrawerState: true,
+      CLOCK_TIMER: null
     }
   },
   computed: {
@@ -116,10 +116,11 @@ export default {
   },
   mounted(){
     this.$store.dispatch('cronjobs/fetchCronjobs');
-    if (!this.getCLOCK) {
+
+    if(!this.CLOCK_TIMER || !this.getCLOCK){
       this.$store.commit("app/setCLOCK", new Date().getTime());
-      setInterval(() => {
-        this.$store.commit("app/setCLOCK", new Date().getTime());
+      this.CLOCK_TIMER = setInterval(() => {
+          this.$store.commit("app/setCLOCK", new Date().getTime());
       }, 1000);
     }
   }

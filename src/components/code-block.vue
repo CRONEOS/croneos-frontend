@@ -1,8 +1,10 @@
 <template>
   <div class="relative-position bg-red">
-    <div></div>
-    <vue-code-highlight>{{code}}</vue-code-highlight>
+    <!-- <q-scroll-area :visible="true" horizontal style="height: 100%; width:100%"> -->
+    <vue-code-highlight>{{remote_snippet||code}}</vue-code-highlight>
+    <!-- </q-scroll-area> -->
     <q-btn
+      v-if="copy"
       class="absolute-top-right q-ma-sm"
       unelevated
       size="sm"
@@ -36,14 +38,20 @@ export default {
     code: {
       type: String,
       default: ""
+    },
+    copy: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
     return {
       iconname: 'file_copy',
-      msg: 'copy'
+      msg: 'copy',
+      remote_snippet: ''
     };
   },
+  
   methods: {
     onCopy: function(e) {
       console.log("You just copied: " + e.text);
@@ -53,6 +61,16 @@ export default {
     },
     onError: function(e) {
       alert("Failed to copy texts");
+    },
+    async fetchCodeSnippet(url){
+      let res = await this.$axios.get(url);
+      console.log(res)
+      this.remote_snippet = res.data;
+    }
+  },
+  async mounted(){
+    if(this.code.includes('http')){
+      this.fetchCodeSnippet(this.code)
     }
   }
 };

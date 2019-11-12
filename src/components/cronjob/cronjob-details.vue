@@ -52,7 +52,7 @@
           <q-item-section avatar>
             tag
           </q-item-section>
-          <q-item-section>{{cronjob.tag || X}}</q-item-section>
+          <q-item-section>{{cronjob.tag || 'x'}}</q-item-section>
         </q-item>
 
         <q-item clickable v-ripple>
