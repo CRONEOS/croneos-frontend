@@ -13,7 +13,7 @@
       <template v-slot:label>
         <div class="row items-center justify-between no-wrap">
           <q-btn flat  class="bg-secondary q-mr-sm networkbuttonhover" round :icon="`img:statics/images/networks/${getActiveNetwork}.png`" size="sm">
-            <q-tooltip content-class="bg-secondary">
+            <q-tooltip content-class="bg-secondary" :delay="500">
               <div v-if="getAccountName">
                 {{`You are connected to ${getActiveNetwork} with ${getSESSION.authenticatorName}`}}
               </div>
@@ -104,7 +104,7 @@ export default {
       
     },
     async handleNetworkClick(network_key){
-      if(network_key == this.getActiveNetwork){
+      if(network_key == this.getActiveNetwork && !!this.getAccountName){
         notifyError(`You are already connected to ${network_key}`)
         return;
       }

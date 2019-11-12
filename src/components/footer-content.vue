@@ -17,6 +17,9 @@
           <router-link to="/schedule/developers" tag="a" class="text-link text-caption" style="display:block">
             Developers
           </router-link>
+          <router-link to="/gas-tokens" tag="a" class="text-link text-caption" style="display:block">
+            Gas Tokens
+          </router-link>
         </div>
       </div>
     </div>

@@ -19,8 +19,6 @@
     <code-block :code="`https://raw.githubusercontent.com/CRONEOS/croneos-api/master/snippets/schedule_basic.cpp`" style="max-width:800px"/>
 
     <h5>More Examples</h5>
-    <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a.</p>
-    <code-block :code="code" style="max-width:800px"/> -->
     <p>Coming soon.</p>
    
 
@@ -44,13 +42,7 @@ export default {
   },
   data() {
     return {
-      code: `    ACTION eosscheduler::delsettings(){
-      require_auth(get_self());
-      settings_table _settings(get_self(), get_self().value);
-      //auto settings = _settings.get();
-      _settings.remove();
 
-    }`
     };
   },
   computed: {

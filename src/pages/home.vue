@@ -23,7 +23,7 @@
 
       <p>Delayed transactions will be deprecated (EOSIO version xx) due to multiple issues it generates (list some of the issues). We propose CRONEOS as an alternative solution for enabling dapps to schedule future work. Smart contract developers can submit their scheduled tasks to an on chain pool. Miners can then execute these jobs. To align incentives we introduce an optional gas fee (multiple tokens allowed). The executer of the scheduled action will receive a (to be determined) portion of the fee as reward (see more about gas-reward model and relationship with CRON token). </p>
 
-      <p>The project is currently in development. I'm doing this on my own... You want to help? Contact via Github.</p>
+      <p>The project is currently in development (live on jungle). You want to help? Contact via Github.</p>
       <!-- <p>Croneos is looking for contributers (design infographics, website, community management, ...).</p> -->
       
     </div>
@@ -92,7 +92,7 @@
 
     <div class="q-pa-sm text-white">
       <h5 class="text-center">...add info graphics...</h5>
-      <div class="text-center" >I'm not tallented enough to make these. If you're a designer and want to help, contact me via github.</div>
+      <div class="text-center" >I'm not tallented enough to make these. If you're a designer and want to help, contact via github.</div>
     </div>
 
 
