@@ -1,4 +1,4 @@
-import {notifyError} from '../../../imports/notifications.js';
+import {notifyError, notifySuccess} from '../../../imports/notifications.js';
 
 import { UAL } from "universal-authenticator-library";
 import { Scatter } from 'ual-scatter';
@@ -87,6 +87,7 @@ export async function attemptAutoLogin({state, commit, dispatch}){
       commit('setSESSION', {accountName:accountName, authenticatorName: authenticatorName});
       commit("setAccountName", accountName);
       commit("setActiveAuthenticator", authenticator);
+      notifySuccess(`Welcome back ${accountName}, you are connected to ${state.SESSION.network} with ${authenticatorName}.`);
     }).catch(e =>{
       commit('setSESSION', {accountName:null, authenticatorName: null});
       console.log('auto login error', e, e.cause);

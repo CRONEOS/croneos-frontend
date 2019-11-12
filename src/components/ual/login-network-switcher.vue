@@ -7,6 +7,7 @@
       dark
       @click="handleLoginClick"
       :loading="getShouldRenderLoginModal"
+      dropdown-icon="keyboard_arrow_down"
     >
 
       <template v-slot:label>
@@ -57,6 +58,7 @@
 
 <script>
 import { mapGetters } from "vuex";
+import {notifyError} from '../../imports/notifications.js';
 export default {
   // name: 'ComponentName',
   data() {
@@ -98,6 +100,10 @@ export default {
       
     },
     async handleNetworkClick(network_key){
+      if(network_key == this.getActiveNetwork){
+        notifyError(`You are already connected to ${network_key}`)
+        return;
+      }
       if(!!this.getAccountName){
         await this.$store.dispatch('ual/logout');
       };

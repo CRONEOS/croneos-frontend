@@ -80,6 +80,8 @@ import { mapGetters } from "vuex";
 import authenticatorBtn from "components/ual/authenticator-btn";
 import signingOverlay from "components/ual/signing-overlay";
 
+import {notifyError, notifySuccess} from '../../imports/notifications.js';
+
 export default {
   name: "UAL",
   components: {
@@ -146,15 +148,17 @@ export default {
         this.$store.commit("ual/setAccountName", account_name);
         this.$store.commit("ual/setActiveAuthenticator", authenticator);
         this.$store.commit("ual/setShouldRenderLoginModal", false);
+        notifySuccess(`Welcome ${account_name}, you are connected to ${this.getActiveNetwork} with ${authenticator_name}.`);
         this.resetUI();
       } catch (err) {
         this.bar_msg = "";
-        console.log("Errorx", err);
-        console.log("Errorx cause", err.cause ? err.cause : "");
+
+        console.log("Error cause", err.cause ? err.cause : "");
         let m = "Service unavailable";
         if (authenticator) {
           m = authenticator.getError() || err;
-          m += ` ${authenticator.getStyle().text}`;
+          m += ` ${authenticator.getStyle().text} `;
+          m += err.cause ? err.cause : "";
           m += ` ${authenticator.getOnboardingLink()}`;
         }
         this.authenticator.reset();
