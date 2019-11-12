@@ -104,7 +104,7 @@ export default {
   },
   data () {
     return {
-      leftDrawer: true,
+      leftDrawer: false,
       miniDrawerState: true,
       CLOCK_TIMER: null
     }
