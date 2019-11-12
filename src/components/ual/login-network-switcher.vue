@@ -45,6 +45,7 @@
           </q-item-section>
           <q-item-section>
             <q-item-label>{{network.label}}</q-item-label>
+            <q-item-label caption v-if="network.msg">{{network.msg}}</q-item-label>
           </q-item-section>
           <!-- <q-item-section side>
             <q-icon name="info" color="amber" />
@@ -68,17 +69,20 @@ export default {
         {
           label: "Jungle",
           key: "jungle",
-          icon: "img:statics/images/networks/jungle.png"
+          icon: "img:statics/images/networks/jungle.png",
+          msg: "active: alpha version"
         },
         {
           label: "Mainnet",
           key: "mainnet",
-          icon: "img:statics/images/networks/mainnet.png"
+          icon: "img:statics/images/networks/mainnet.png",
+          msg: "coming soon"
         },
         {
           label: "Kylin",
           key:"kylin",
-          icon: "img:statics/images/networks/kylin.png"
+          icon: "img:statics/images/networks/kylin.png",
+          msg: "coming soon"
         },
 
       ]

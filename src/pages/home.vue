@@ -23,8 +23,8 @@
 
       <p>Delayed transactions will be deprecated (EOSIO version xx) due to multiple issues it generates (list some of the issues). We propose CRONEOS as an alternative solution for enabling dapps to schedule future work. Smart contract developers can submit their scheduled tasks to an on chain pool. Miners can then execute these jobs. To align incentives we introduce an optional gas fee (multiple tokens allowed). The executer of the scheduled action will receive a (to be determined) portion of the fee as reward (see more about gas-reward model and relationship with CRON token). </p>
 
-      <p>The project is currently in development.</p>
-      <p>Croneos is looking for contributers (design infographics, website, community management, ...).</p>
+      <p>The project is currently in development. I'm doing this on my own... You want to help? Contact via Github.</p>
+      <!-- <p>Croneos is looking for contributers (design infographics, website, community management, ...).</p> -->
       
     </div>
 
@@ -52,7 +52,7 @@
       <h5 class="text-center">Aligning Incentives with Gas</h5>
       <p>Although paying gas is optional we believe it will increase the probability of on time execution. The executer of your scheduled action will be rewarded with 50% (to be determined) of the gas and additional CRON tokens.  Currently the CRONEOS smart contract only accepts the following gas tokens:</p>
       <div class="row">
-        <div v-for="token in getAllowedFeeTokens" class="q-mr-sm"> {{token.sym}}</div>
+        <div v-for="token in getAllowedFeeTokens" class="q-mr-sm" :key="token.sym" > {{token.sym}}</div>
       </div>
 
       <router-link to="/gas-tokens" tag="a" class="text-link">
@@ -64,8 +64,8 @@
     <div class="q-pa-sm text-white">
       <h5 class="text-center">CRON Token</h5>
     </div>
-    <p>CRON</p>
-    <div class="row q-col-gutter-lg text-white q-pa-sm">
+    <p class="text-center">More info about the CRON token soon...</p>
+    <!-- <div class="row q-col-gutter-lg text-white q-pa-sm">
       <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="q-pa-sm bg-primary">
             col1
@@ -87,12 +87,12 @@
         </div>
       </div>
 
-    </div>
+    </div> -->
 
 
     <div class="q-pa-sm text-white">
       <h5 class="text-center">...add info graphics...</h5>
-
+      <div class="text-center" >I'm not tallented enough to make these. If you're a designer and want to help, contact me via github.</div>
     </div>
 
 

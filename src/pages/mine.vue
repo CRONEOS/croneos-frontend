@@ -1,7 +1,8 @@
 <template>
-  <q-page padding class>
+  <q-page padding class="text-white">
     <!-- content -->
-    
+    <h5>Scheduled Jobs</h5>
+    <!-- <p>All scheduled jobs are displayed here.</p> -->
     <transition-group
       v-if="getCronjobs.length"
       enter-active-class="animated fadeIn"
