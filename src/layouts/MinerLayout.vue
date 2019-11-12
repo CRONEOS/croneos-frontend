@@ -13,9 +13,7 @@
           @click="leftDrawer = !leftDrawer"
           class="q-mr-sm"
         />
-        <router-link to="/" class="row items-center">
-          <img  src="~assets/croneos-logo.svg" style="height:24px" class="cursor-pointer"/>
-        </router-link>
+        <main-logo />
         <q-toolbar-title>
           
         </q-toolbar-title>
@@ -95,11 +93,13 @@
 <script>
 import { mapGetters } from "vuex";
 import loginNetworkSwitcher from 'components/ual/login-network-switcher';
+import mainLogo from 'components/main-logo';
 // import footerContent from 'components/footer-content';
 export default {
   // name: 'LayoutName',
   components:{
     loginNetworkSwitcher,
+    mainLogo
     // footerContent
   },
   data () {

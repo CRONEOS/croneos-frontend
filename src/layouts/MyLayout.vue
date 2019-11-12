@@ -2,11 +2,7 @@
   <q-layout view="lhh Lpr fff">
     <q-header :elevated="true" reveal>
       <q-toolbar style="height:60px" class="bg-secondary" >
-        <router-link to="/" class="row items-center">
-          <img  src="~assets/croneos-logo.svg" style="height:24px" class="cursor-pointer"/>
-        </router-link>
-        <!-- <img v-else src="~assets/eosdac-logo-notext.svg" style="height:45px"/> -->
-        
+        <main-logo />
         <q-toolbar-title>
           
         </q-toolbar-title>
@@ -66,13 +62,15 @@ import { mapGetters } from "vuex";
 import loginBtn from 'components/ual/login-btn';
 import loginNetworkSwitcher from 'components/ual/login-network-switcher';
 import footerContent from 'components/footer-content';
+import mainLogo from 'components/main-logo';
 
 export default {
   name: 'MyLayout',
   components:{
     loginBtn,
     footerContent,
-    loginNetworkSwitcher
+    loginNetworkSwitcher,
+    mainLogo
   },
   data () {
     return {

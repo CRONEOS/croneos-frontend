@@ -70,7 +70,7 @@ export default {
           label: "Jungle",
           key: "jungle",
           icon: "img:statics/images/networks/jungle.png",
-          msg: "active: alpha version"
+          msg: "active: beta version"
         },
         {
           label: "Mainnet",
