@@ -66,13 +66,24 @@
                 <div class="text-caption" >{{cronjob.description}}</div>
               </div>
 
-              <div class="row justify-between full-width q-px-sm">
+              <div class="row justify-between full-width">
+
                 <div v-if="!getTimeStats.expired">
-                  {{cronjob.gas_fee}}
+                  <!-- <span class="text-caption q-pl-xs">GAS</span> -->
+                  <div class="row items-center q-pa-xs">
+                    <q-icon name="local_gas_station" class="q-mr-xs" style="margin-top:-2px"/>
+                    <div>{{cronjob.gas_fee}}</div>
+                  </div>
                 </div>
+
                 <div >
-                  12359.0000 CRON
+                  <!-- <span class="text-caption q-pr-xs">CRON</span> -->
+                  <div class="row items-center q-pa-xs">
+                    <q-icon name="img:statics/vectors/cron-symbol.svg" class="q-mr-xs" style="margin-top:-2px"/>
+                    <div>1111 CRON</div>
+                  </div>
                 </div>
+
               </div>
 
 

@@ -104,7 +104,7 @@ export default {
   },
   data () {
     return {
-      leftDrawer: false,
+      leftDrawer: this.$q.screen.gt.md,
       miniDrawerState: true,
       CLOCK_TIMER: null
     }
