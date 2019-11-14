@@ -1,5 +1,5 @@
 <template>
-  <q-page padding style="max-width:900px" class="bg-white">
+  <q-page padding class="constrain-page-width bg-white">
 
     <!-- content -->
     <h5 class="row justify-between items-center">
@@ -16,7 +16,7 @@
 
     <h5>Schedule an Action</h5>
     <p>Full example to schedule an action making use of the croneos::job struct. This an example of a recursive pattern.</p>
-    <code-block :code="`https://raw.githubusercontent.com/CRONEOS/croneos-api/master/snippets/schedule_basic.cpp`" style="max-width:800px"/>
+    <code-block :code="`https://raw.githubusercontent.com/CRONEOS/croneos-examples/master/snippets/full_example.cpp`" style="max-width:800px"/>
 
     <h5>More Examples</h5>
     <p>Coming soon.</p>
@@ -28,7 +28,7 @@
 <script>
 import {openURL} from 'quasar';
 import codeBlock from 'components/code-block';
-import { component as VueCodeHighlight } from 'vue-code-highlight';
+
 import  '../../node_modules/vue-code-highlight/themes/prism-coy.css';//ok
 // import  '../../node_modules/vue-code-highlight/themes/prism-okaidia.css';//ok
 // import  '../../node_modules/vue-code-highlight/themes/prism-tomorrow.css';//ok
@@ -36,9 +36,7 @@ import { mapGetters } from "vuex";
 export default {
   // name: 'PageName',
   components:{
-    codeBlock,
-    VueCodeHighlight
-
+    codeBlock
   },
   data() {
     return {

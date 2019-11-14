@@ -123,6 +123,10 @@ export default {
           this.$store.commit("app/setCLOCK", new Date().getTime());
       }, 1000);
     }
-  }
+  },
+  destoyed(){
+    clearInterval( this.CLOCK_TIMER );
+    this.CLOCK_TIMER = null;
+  },
 }
 </script>

@@ -2,7 +2,7 @@
   <q-page padding class="text-white">
     <!-- content -->
     <h5>Scheduled Jobs</h5>
-    <!-- <p>All scheduled jobs are displayed here.</p> -->
+    <p>This page shows all mineable cronjobs. You can mine manual from this page but it will probably not work when more miners (bots) enter the croneos platform. In fact bots are an essential part for on time execution. Anyone can start a miner, enjoy while the competition (mining difficulty) is low. Learn more about bot mining here (link)</p>
     <transition-group
       v-if="getCronjobs.length"
       enter-active-class="animated fadeIn"

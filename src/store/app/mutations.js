@@ -5,3 +5,7 @@ export function setCLOCK(state, payload){
 export function setSettings(state, payload){
     state.settings = payload;
 }
+
+export function setAllowedFeeTokens(state, payload){
+    state.allowedFeeTokens = payload;
+}
