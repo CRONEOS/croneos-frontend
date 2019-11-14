@@ -51,9 +51,7 @@
     <div class="q-pa-sm text-white">
       <h5 class="text-center">Aligning Incentives with Gas</h5>
       <p>Although paying gas is optional we believe it will increase the probability of on time execution. The executer of your scheduled action will be rewarded with 50% (to be determined) of the gas and additional CRON tokens.  Currently the CRONEOS smart contract only accepts the following gas tokens:</p>
-      <div class="row">
-        <div v-for="token in getAllowedFeeTokens" class="q-mr-sm" :key="token.sym" > {{token.sym}}</div>
-      </div>
+      <gas-tokens />
 
       <router-link to="/gas-tokens" tag="a" class="text-link">
         Apply for listing your token
@@ -134,12 +132,13 @@
 
 <script>
 import { mapGetters } from "vuex";
+import gasTokens from 'components/gas-tokens'
 
 
 export default {
   name: "PageIndex",
   components: {
-    
+    gasTokens
   },
   data() {
     return {
@@ -150,7 +149,6 @@ export default {
   computed: {
     ...mapGetters({
       getAccountName: "ual/getAccountName",
-      getAllowedFeeTokens: "app/getAllowedFeeTokens"
     })
   },
   methods: {

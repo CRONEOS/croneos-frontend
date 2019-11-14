@@ -3,5 +3,17 @@
     "social":{
         "github": "https://github.com/CRONEOS"
     },
-    "tokens": "https://raw.githubusercontent.com/eoscafe/eos-airdrops/master/tokens.json"
+    "tokens": [
+        {
+            "symbol": "EOS",
+            "account": "eosio.token",
+            "logo": "./statics/images/tokens/eos.png"
+        },
+        {
+            "symbol": "JUNGLE",
+            "account": "eosio.token",
+            "logo": "./statics/images/tokens/jungle.png"
+        }
+    
+    ]
 }

@@ -25,6 +25,7 @@ export async function fetchSettings ({ state, commit }) {
 }
 
 export async function fetchAllowedFeeTokens ({ state, commit }) {
+
   let res = await this._vm.$eos.rpc.get_table_rows({
       json: true,
       code: state.config.cron_contract,
