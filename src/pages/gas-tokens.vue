@@ -5,7 +5,7 @@
       <h5>Gas Tokens</h5>
       <gas-tokens />
 
-      <p>We are not listing new gas tokens at this stage.</p>
+      <p class="text-italic">We are not listing new gas tokens at this stage.</p>
 
       <div class="q-mt-xl">Pay gas in your native token</div>
       <div>Add utility to token</div>
@@ -13,7 +13,7 @@
         <q-btn label="apply" :disabled="true" color="primary" />
         <q-btn label="go back" flat color="primary" to="/" />
       </div>
-      
+      <div style="height:200px"></div>
     </div>
   </q-page>
 </template>

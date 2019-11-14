@@ -35,12 +35,13 @@ export default {
   computed: {
     ...mapGetters({
       getSettings: "app/getSettings",
-      getDeposits: "user/getDeposits"
+      getDeposits: "user/getDeposits",
+      getAllowedFeeTokens: "app/getAllowedFeeTokens"
     }),
     getExtendedDeposits() {
-      if (this.getSettings) {
+      if (this.getAllowedFeeTokens) {
         let res = [];
-        this.getSettings.allowed_fee_tokens.forEach(aft => {
+        this.getAllowedFeeTokens.forEach(aft => {
           let balance_for_sym = this.getDeposits.find(
             d => d.balance.split(" ")[1] == aft.sym
           );
