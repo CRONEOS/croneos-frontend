@@ -1,7 +1,7 @@
 <template>
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 " :style="{order: order}">
     
-    <div class="overflow-hidden cronjob rounded-borders   ">
+    <div class="overflow-hidden  rounded-borders  shadow-3 ">
       
       <div class="bg-secondary row justify-center items-center relative-position" style="height:32px">
         <img src="~assets/croneos-logo.svg" style="height:15px" />
@@ -284,10 +284,7 @@ export default {
 </script>
 
 <style>
-.cronjob {
-  border: 1px solid black;
-  background: white;
-}
+
 .cron-expired {
   background: #f9ebed;
 }

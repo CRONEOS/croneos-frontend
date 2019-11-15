@@ -2,15 +2,17 @@
   <div class="">
 
     <q-table
-      title="My Scheduled Jobs"
+      title=""
+      dark
       :data="data"
       :columns="columns"
       color="primary"
       row-key="name"
+      class="bg-secondary"
       :grid="false"
       :fullscreen="false"
       :wrap-cells="true"
-      no-data-label="You don't have waiting jobs"
+      no-data-label="You don't have scheduled jobs"
       :dense="$q.screen.lt.md"
       selection="none"
       :selected.sync="selected"
@@ -91,7 +93,7 @@ data () {
           name: 'id',
           required: true,
           label: 'job id',
-          align: 'left',
+          align: 'center',
           field: row => row.id,
           format: val => `${val}`,
           sortable: true
@@ -212,6 +214,7 @@ data () {
       if(res){
         this.$emit("executed");
         this.data = this.data.filter(d => d.id != id );
+        this.$store.dispatch('user/fetchDeposits', this.getAccountName);
       }
     }
   },

@@ -39,37 +39,57 @@
         <q-item-label v-if="getAccountName" header>Welcome {{getAccountName}}</q-item-label>
         <q-item-label v-else header>Please login</q-item-label>
 
+        <q-item clickable to="/mine" exact>
+          <q-item-section avatar>
+            <q-icon name="ion-hammer" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Mine</q-item-label>
+            <q-item-label caption>list scheduled jobs</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <!-- <q-item v-if="getAccountName" clickable :to="`/mine/rewards`">
+          <q-item-section avatar>
+            <q-icon name="ion-logo-usd" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>My Rewards</q-item-label>
+           <q-item-label caption>mining stats</q-item-label>
+          </q-item-section>
+        </q-item> -->
+
+
         <q-item clickable to="/schedule" exact>
           <q-item-section avatar>
             <q-icon name="ion-alarm" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Schedule</q-item-label>
-            <q-item-label caption>schedule jobs</q-item-label>
+            <q-item-label>My Scheduled Jobs</q-item-label>
+            <q-item-label caption>dashboard</q-item-label>
           </q-item-section>
         </q-item>
 
-        <q-item clickable to="/schedule/deposits" exact>
+        <!-- <q-item clickable to="/schedule/deposits" exact>
           <q-item-section avatar>
             <q-icon  name="ion-logo-usd" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Deposits</q-item-label>
+            <q-item-label>My Deposits</q-item-label>
             <q-item-label caption>can be used for gas</q-item-label>
           </q-item-section>
-        </q-item>
+        </q-item> -->
 
-
-
-        <q-item clickable to="/schedule/developers" exact>
+        <q-item clickable to="/docs/getting-started" exact>
           <q-item-section avatar>
             <q-icon name="ion-code-working" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Developers</q-item-label>
-            <q-item-label caption>smart contract integration</q-item-label>
+            <q-item-label>Docs</q-item-label>
+            <!-- <q-item-label caption>can be used for gas</q-item-label> -->
           </q-item-section>
         </q-item>
+
 
         <q-item clickable to="/" exact>
           <q-item-section avatar>
@@ -83,7 +103,7 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container style="background: #D7D6DC">
+    <q-page-container class=" text-black bg-grey-2">
       <!-- This is where pages get injected -->
       <router-view />
       <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
@@ -106,7 +126,7 @@ export default {
   },
   data () {
     return {
-      leftDrawer: this.$q.screen.gt.md,
+      leftDrawer: this.$q.screen.gt.sm,
       miniDrawerState: true
     }
   },

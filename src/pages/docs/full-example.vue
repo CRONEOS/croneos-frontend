@@ -1,5 +1,5 @@
 <template>
-  <q-page padding class="constrain-page-width bg-white">
+  <q-page padding class="constrain-page-width bg-white text-black">
 
     <!-- content -->
     <h5 class="row justify-between items-center">
@@ -28,10 +28,6 @@
 <script>
 import {openURL} from 'quasar';
 import codeBlock from 'components/code-block';
-
-import  '../../node_modules/vue-code-highlight/themes/prism-coy.css';//ok
-// import  '../../node_modules/vue-code-highlight/themes/prism-okaidia.css';//ok
-// import  '../../node_modules/vue-code-highlight/themes/prism-tomorrow.css';//ok
 import { mapGetters } from "vuex";
 export default {
   // name: 'PageName',

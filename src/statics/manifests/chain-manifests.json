@@ -4,20 +4,16 @@
     {
       "chainId": "e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473",
       "manifest": {
-        "account": "dacfactoryio",
+        "account": "piecesnbitss",
         "domain": "http://localhost:8080",
-        "appmeta": "http://localhost:8080/app-metadata.json#265505ad40de04c652b26b689f8884e9b590b1f1ecccaee0579f3e26e7d765f7",
+        "appmeta": "http://localhost:8080/app-metadata.json#42a772be66cc29a7537a67b8f96be58b183ac5d4ee0a4c4ea5e6cb5faf4f7d5f",
         "whitelist": [
           {
-            "contract": "eosio.token",
+            "contract": "",
             "action": "transfer"
           },
           {
-            "contract": "kasdactokens",
-            "action": "transfer"
-          },
-          {
-            "contract": "dacfactoryio",
+            "contract": "piecestest12",
             "action": ""
           }
         ]

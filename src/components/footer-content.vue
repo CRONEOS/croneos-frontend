@@ -14,8 +14,8 @@
           <router-link to="/schedule" tag="a" class="text-link text-caption" style="display:block">
             Schedule
           </router-link>
-          <router-link to="/schedule/developers" tag="a" class="text-link text-caption" style="display:block">
-            Developers
+          <router-link to="/docs/getting-started" tag="a" class="text-link text-caption" style="display:block">
+            Documentation
           </router-link>
           <router-link to="/gas-tokens" tag="a" class="text-link text-caption" style="display:block">
             Gas Tokens

@@ -1,8 +1,8 @@
 <template>
       <div v-if="reward"  >
         <!-- {{parseReward()}} -->
-        <div class="q-pa-sm bg-secondary">
-            <div class="text-h6 q-mb-md">{{ reward}}</div>
+        <div class="q-pa-sm bg-secondary rounded-borders shadow-3">
+            <div class=" q-mb-md">{{ reward}}</div>
             <div class="row justify-end">
               <q-btn label="withdraw" color="primary" @click="withdraw( )" />
             </div>

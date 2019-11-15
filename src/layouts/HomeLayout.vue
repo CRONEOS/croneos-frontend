@@ -65,7 +65,7 @@ import footerContent from 'components/footer-content';
 import mainLogo from 'components/main-logo';
 
 export default {
-  name: 'MyLayout',
+  name: 'HomeLayout',
   components:{
     loginBtn,
     footerContent,

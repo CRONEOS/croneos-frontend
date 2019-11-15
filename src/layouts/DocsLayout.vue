@@ -17,15 +17,14 @@
         <q-toolbar-title>
           
         </q-toolbar-title>
-
         <login-network-switcher />
       </q-toolbar>
 
     </q-header>
 
     <!-- (Optional) The Footer -->
-    <q-footer class="bg-secondary">
-      <!-- <footer-content /> -->
+    <q-footer class="bg-secondary" style="height:100px">
+      <div>footer</div>
     </q-footer>
 
     <!-- (Optional) A Drawer; you can add one more with side="right" or change this one's side -->
@@ -40,27 +39,19 @@
         <q-item-label v-if="getAccountName" header>Welcome {{getAccountName}}</q-item-label>
         <q-item-label v-else header>Please login</q-item-label>
 
-        <q-item clickable to="/mine" exact>
+
+        <q-item clickable to="/docs/getting-started" exact>
           <q-item-section avatar>
-            <q-icon name="ion-hammer" />
+            1
+            <!-- <q-icon  name="ion-logo-usd" /> -->
           </q-item-section>
           <q-item-section>
-            <q-item-label>Mineables</q-item-label>
-            <q-item-label caption>list scheduled jobs</q-item-label>
+            <q-item-label>Get Started</q-item-label>
+            <!-- <q-item-label caption>can be used for gas</q-item-label> -->
           </q-item-section>
         </q-item>
 
-        <q-item v-if="getAccountName" clickable :to="`/mine/statistics/${getAccountName}`">
-          <q-item-section avatar>
-            <q-icon name="ion-logo-usd" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>My Rewards</q-item-label>
-            <q-item-label caption>mining stats</q-item-label>
-          </q-item-section>
-        </q-item>
-
-        <q-item clickable to="/mine/mining-bot" exact>
+        <q-item clickable to="/docs/mining-bot" exact>
           <q-item-section avatar>
             <q-icon name="img:statics/vectors/bot.svg" />
           </q-item-section>
@@ -70,6 +61,8 @@
           </q-item-section>
         </q-item>
 
+
+        <q-separator/>
         <q-item clickable to="/" exact>
           <q-item-section avatar>
             <q-icon name="home" />
@@ -82,9 +75,12 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container style="background: #3B3B3B">
+    <q-page-container class=" bg-secondary">
       <!-- This is where pages get injected -->
       <router-view />
+      <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
+        <q-btn fab icon="keyboard_arrow_up" color="primary" />
+      </q-page-scroller>
     </q-page-container>
 
   </q-layout>
@@ -94,39 +90,22 @@
 import { mapGetters } from "vuex";
 import loginNetworkSwitcher from 'components/ual/login-network-switcher';
 import mainLogo from 'components/main-logo';
-// import footerContent from 'components/footer-content';
 export default {
   // name: 'LayoutName',
   components:{
     loginNetworkSwitcher,
     mainLogo
-    // footerContent
   },
   data () {
     return {
-      leftDrawer: this.$q.screen.gt.md,
-      miniDrawerState: true,
-      CLOCK_TIMER: null
+      leftDrawer: this.$q.screen.gt.sm,
+      miniDrawerState: true
     }
   },
   computed: {
     ...mapGetters({
       getAccountName: "ual/getAccountName"
     })
-  },
-  mounted(){
-    this.$store.dispatch('cronjobs/fetchCronjobs');
-
-    if(!this.CLOCK_TIMER || !this.getCLOCK){
-      this.$store.commit("app/setCLOCK", new Date().getTime());
-      this.CLOCK_TIMER = setInterval(() => {
-          this.$store.commit("app/setCLOCK", new Date().getTime());
-      }, 1000);
-    }
-  },
-  destoyed(){
-    clearInterval( this.CLOCK_TIMER );
-    this.CLOCK_TIMER = null;
   },
 }
 </script>

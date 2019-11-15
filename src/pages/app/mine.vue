@@ -1,6 +1,11 @@
 <template>
-  <q-page padding class="text-white">
-    <!-- content -->
+  <q-page padding class="">
+    <h5>Mining Rewards</h5>
+    <div  class="row q-col-gutter-lg text-white" >
+      <reward-balance :reward="reward.adj_p_balance" v-for="(reward,i) in getRewards" :key="`reward${i}`" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2"/>
+    </div>
+
+
     <h5>Scheduled Jobs</h5>
     <p>This page shows all mineable cronjobs. You can mine manual from this page but it will probably not work when more miners (bots) enter the croneos platform. In fact bots are an essential part for on time execution. Anyone can start a miner, enjoy while the competition (mining difficulty) is low. Learn more about bot mining here (link)</p>
     <transition-group
@@ -25,21 +30,24 @@
 <script>
 import { mapGetters } from "vuex";
 import cronjob from "components/cronjob/cronjob";
+import rewardBalance from 'components/reward/reward-balance';
 export default {
   // name: 'PageName',
   components: {
-    cronjob
+    cronjob,
+    rewardBalance
   },
   data() {
     return {
- 
+      CLOCK_TIMER: null
 
     };
   },
   computed: {
     ...mapGetters({
       getCLOCK: "app/getCLOCK",
-      getCronjobs: "cronjobs/getCronjobs"
+      getCronjobs: "cronjobs/getCronjobs",
+      getRewards: "user/getRewards"
     })
   },
   methods: {
@@ -50,9 +58,19 @@ export default {
       this.$store.commit('cronjobs/removeCronjobByIndex', e);
     }
   },
-  mounted() {
-
-  }
+  mounted(){
+    this.$store.dispatch('cronjobs/fetchCronjobs');
+    if(!this.CLOCK_TIMER || !this.getCLOCK){
+      this.$store.commit("app/setCLOCK", new Date().getTime());
+      this.CLOCK_TIMER = setInterval(() => {
+          this.$store.commit("app/setCLOCK", new Date().getTime());
+      }, 1000);
+    }
+  },
+  destoyed(){
+    clearInterval( this.CLOCK_TIMER );
+    this.CLOCK_TIMER = null;
+  },
 };
 </script>
 
