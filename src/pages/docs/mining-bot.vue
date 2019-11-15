@@ -5,6 +5,15 @@
     <p>We care about the execution time of our scheduled jobs and we care about you receiving high rewards. Bots that automate the execution of the scheduled jobs can be of great help here. Hence we encourage the community to develop various tools to mine gas fees and CRON.</p>
     very basic JS example
     <code-block :code="code" :copy="false" style="max-width:800px"/>
+
+    <h5>The Ultimate Mining Bot</h5>
+    <p>The ultimate croneos mining bot would be a nodeos plugin that reacts to table deltas on the croneos contract. The state history plugin would be a good candidate as a base to build such a bot.</p>
+
+    <h5>Some Ideas...</h5>
+    <p>Raspberry pi python lib that listen to a stream of table deltas from the croneos contract.</p>
+    <p>Automated mining in the Browser via service worker.</p>
+    <i>I'll probably build such tools but first need to prioritize documentation etc. If you want to join the project please contact via github.</i>
+
   </q-page>
 </template>
 
