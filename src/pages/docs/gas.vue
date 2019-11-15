@@ -1,11 +1,11 @@
 <template>
-  <q-page padding class="constrain-page-width bg-white text-black">
+  <q-page padding class="constrain-page-width bg-white text-black" style="padding-bottom:300px">
 
     <!-- content -->
     <h5 class="row justify-between items-center">
       Gas Fees
     </h5>
-    <p>When you schedule an action you have the option to set a gas fee. This gas is used to compensate the executer/miner of your job. Gas is completely optional but it will incentivize miners to execute your job on time.</p>
+    <p>When you schedule an action you have the option to set a gas fee. This gas is used to compensate the executer/miner of your job. Gas is completely optional but it will incentivize miners to execute your job on time. Check <router-link to="/gas-tokens" tag="a" class="text-link inline-block" style="display:block">here</router-link> which tokens are allowed for gas.</p>
 
     <h6>Schedule without gas</h6>
     <p>Just omit the gas_fee parameter when you configure the croneos::job struct. Alternatively you can set the asset amount to be zero. Mind that in the latter case the symbol must be from a valid gas token.</p>
@@ -30,7 +30,6 @@
     <h5>More Examples</h5>
     <p>Coming soon.</p> -->
    
-  <div style="height:300px"></div>
   </q-page>
 </template>
 

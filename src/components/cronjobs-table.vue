@@ -17,7 +17,7 @@
       selection="none"
       :selected.sync="selected"
     >
-      <template v-slot:header="props">
+      <!-- <template v-slot:header="props">
         <q-tr :props="props">
           <q-th
             v-for="col in props.cols"
@@ -28,7 +28,7 @@
             {{ col.label }}
           </q-th>
         </q-tr>
-      </template>
+      </template> -->
 
       <template v-slot:body-cell-id="props">
         <q-td :props="props">

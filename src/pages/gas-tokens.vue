@@ -11,7 +11,7 @@
       <div>Add utility to token</div>
       <div class="q-mt-md">
         <q-btn label="apply" :disabled="true" color="primary" />
-        <q-btn label="go back" flat color="primary" to="/" />
+        <q-btn label="go back" flat color="primary" @click="$router.go(-1)" />
       </div>
       <div style="height:200px"></div>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <q-page padding class="constrain-page-width bg-white text-black">
+  <q-page padding class="constrain-page-width bg-white text-black" style="padding-bottom:300px">
 
     <!-- content -->
     <h5 class="row justify-between items-center">
@@ -11,14 +11,14 @@
     </h5>
 
 
-    <p>For using CRONEOS in your smart contracts you first need to include the croneos api header file. Head over to our github repo to get the latest. CRONEOS is still in develpment, the api schema  may change but we'll do our best to make future updates backwards compatible.</p>
+    <p>For using CRONEOS in your smart contracts you first need to include the croneos api header file. Head over to our github repo to get the latest. CRONEOS is still in development, the api schema  may change but we'll do our best to make future updates backwards compatible.</p>
     <code-block :code="`#include <croneos.hpp>`" :copy="false" style="max-width:800px"/>
     
     <div class="info-box">The croneos header file is a namespaced wrapper to interact with the croneos smart contract.</div>
 
 
     <h5>Schedule an Action</h5>
-    <p>Full example to schedule an action making use of the croneos::job struct. This an example of a recursive pattern.</p>
+    <p>Full example to schedule an action making use of the croneos::job struct. This is an example of a recursive pattern.</p>
     <code-block :code="`https://raw.githubusercontent.com/CRONEOS/croneos-examples/master/snippets/full_example.cpp`" style="max-width:800px"/>
 
     <h5>More Examples</h5>

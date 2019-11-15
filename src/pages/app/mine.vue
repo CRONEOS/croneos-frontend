@@ -67,7 +67,7 @@ export default {
       }, 1000);
     }
   },
-  destoyed(){
+  beforeDestroy(){
     clearInterval( this.CLOCK_TIMER );
     this.CLOCK_TIMER = null;
   },

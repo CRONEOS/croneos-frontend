@@ -10,7 +10,7 @@
         <q-tabs shrink stretch class="q-mr-sm gt-xs" indicator-color="primary" align="right">
           <q-route-tab  label="mine" to="/mine" />
           <q-route-tab  label="schedule" to="/schedule" />
-          <q-route-tab  label="docs" to="/docs" />
+          <q-route-tab  label="docs" to="/docs/getting-started" />
         </q-tabs>
         <login-network-switcher />
         <!-- <login-btn /> -->

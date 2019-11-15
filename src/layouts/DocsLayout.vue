@@ -24,7 +24,7 @@
 
     <!-- (Optional) The Footer -->
     <q-footer class="bg-secondary" style="height:100px">
-      <div>footer</div>
+      <div></div>
     </q-footer>
 
     <!-- (Optional) A Drawer; you can add one more with side="right" or change this one's side -->
@@ -46,6 +46,16 @@
           </q-item-section> -->
           <q-item-section>
             <q-item-label>Get Started</q-item-label>
+            <!-- <q-item-label caption>can be used for gas</q-item-label> -->
+          </q-item-section>
+        </q-item>
+
+        <q-item clickable to="/docs/due-date" exact>
+          <!-- <q-item-section avatar>
+            <q-icon  name="check" />
+          </q-item-section> -->
+          <q-item-section>
+            <q-item-label>Due Date</q-item-label>
             <!-- <q-item-label caption>can be used for gas</q-item-label> -->
           </q-item-section>
         </q-item>
@@ -90,6 +100,7 @@
       <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
         <q-btn fab icon="keyboard_arrow_up" color="primary" />
       </q-page-scroller>
+        
     </q-page-container>
 
   </q-layout>
