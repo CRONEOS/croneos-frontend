@@ -6,14 +6,14 @@
 
     <p>The croneos contract (and the miners) need to know when your scheduled job must be executed. Setting the due date for your cronjob can be done in 2 ways.</p>
 
-    <h6>Delay in seconds</h6>
+    <h6>Delay in Seconds</h6>
     <p>You can set the execution time of your job relative to the blocktime on which your job is received by the contract. This can be done with the delay_sec property of the croneos::job struct.</p>
     <code-block :code="delay_sec" :copy="false" style="max-width:800px"/>
     
     <div class="info-box">The job will be ready for execution by a miner after delay_sec has past from the block on which the job is received. The croneos contract will assert if the delay isn't met.</div>
 
 
-    <h6>Fixed timepoint</h6>
+    <h6>Fixed Timepoint</h6>
     <p>You also can set the execution time of your job to a fixed timepoint in the future.</p>
     <code-block :code="fixed_time" :copy="false" style="max-width:800px"/>
     

@@ -60,6 +60,16 @@
           </q-item-section>
         </q-item>
 
+        <q-item clickable to="/docs/expiration" exact>
+          <!-- <q-item-section avatar>
+            <q-icon  name="check" />
+          </q-item-section> -->
+          <q-item-section>
+            <q-item-label>Expiration</q-item-label>
+            <!-- <q-item-label caption>can be used for gas</q-item-label> -->
+          </q-item-section>
+        </q-item>
+
         <q-item clickable to="/docs/gas" exact>
           <!-- <q-item-section avatar>
             <q-icon  name="check" />

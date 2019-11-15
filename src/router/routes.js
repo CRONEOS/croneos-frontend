@@ -35,6 +35,7 @@ const routes = [
       { path: '', component: () => import('pages/docs/getting-started.vue') },
       { path: 'getting-started', component: () => import('pages/docs/getting-started.vue') },
       { path: 'due-date', component: () => import('pages/docs/due-date.vue') },
+      { path: 'expiration', component: () => import('pages/docs/expiration.vue') },
       { path: 'gas', component: () => import('pages/docs/gas.vue') },
       { path: 'developers', component: () => import('pages/docs/full-example.vue') },
       { path: 'mining-bot', component: () => import('pages/docs/mining-bot.vue') },
