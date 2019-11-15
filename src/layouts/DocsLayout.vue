@@ -35,15 +35,15 @@
       content-class="bg-grey-2"
 
     >
-    <q-list>
-        <q-item-label v-if="getAccountName" header>Welcome {{getAccountName}}</q-item-label>
-        <q-item-label v-else header>Please login</q-item-label>
+    <q-list :dense="false" >
+        <!-- <q-item-label v-if="getAccountName" header>Welcome {{getAccountName}}</q-item-label> -->
+        <q-item-label  header>Croneos Documentation</q-item-label>
 
 
         <q-item clickable to="/docs/getting-started" exact>
-          <q-item-section avatar>
+          <!-- <q-item-section avatar>
             <q-icon  name="check" />
-          </q-item-section>
+          </q-item-section> -->
           <q-item-section>
             <q-item-label>Get Started</q-item-label>
             <!-- <q-item-label caption>can be used for gas</q-item-label> -->
@@ -51,9 +51,9 @@
         </q-item>
 
         <q-item clickable to="/docs/gas" exact>
-          <q-item-section avatar>
+          <!-- <q-item-section avatar>
             <q-icon  name="check" />
-          </q-item-section>
+          </q-item-section> -->
           <q-item-section>
             <q-item-label>Gas</q-item-label>
             <!-- <q-item-label caption>can be used for gas</q-item-label> -->
@@ -61,12 +61,12 @@
         </q-item>
 
         <q-item clickable to="/docs/mining-bot" exact>
-          <q-item-section avatar>
+          <!-- <q-item-section avatar>
             <q-icon name="img:statics/vectors/bot.svg" />
-          </q-item-section>
+          </q-item-section> -->
           <q-item-section>
             <q-item-label>Mining bot</q-item-label>
-            <q-item-label caption>run a mining bot</q-item-label>
+            <!-- <q-item-label caption>run a mining bot</q-item-label> -->
           </q-item-section>
         </q-item>
 
