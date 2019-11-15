@@ -42,11 +42,20 @@
 
         <q-item clickable to="/docs/getting-started" exact>
           <q-item-section avatar>
-            1
-            <!-- <q-icon  name="ion-logo-usd" /> -->
+            <q-icon  name="check" />
           </q-item-section>
           <q-item-section>
             <q-item-label>Get Started</q-item-label>
+            <!-- <q-item-label caption>can be used for gas</q-item-label> -->
+          </q-item-section>
+        </q-item>
+
+        <q-item clickable to="/docs/gas" exact>
+          <q-item-section avatar>
+            <q-icon  name="check" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Gas</q-item-label>
             <!-- <q-item-label caption>can be used for gas</q-item-label> -->
           </q-item-section>
         </q-item>

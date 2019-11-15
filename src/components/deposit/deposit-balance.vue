@@ -92,7 +92,7 @@ export default {
           }
         }
       ];
-      let res = await this.$store.dispatch("ual/transact", { actions: actions });
+      let res = await this.$store.dispatch("ual/transact", { actions: actions, disable_signing_overlay: true });
       if(res){
         this.callback();
       }

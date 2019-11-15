@@ -3,7 +3,7 @@
     <h5>Gas Deposits</h5>
     <deposits />
     <h5>My Scheduled Jobs</h5>
-
+    <p>See the docs for adding your jobs</p>
     <div class="q-mt-md">
       
       <cronjobs-table :cronjobs="mycronjobs"/>
