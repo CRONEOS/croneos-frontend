@@ -37,7 +37,8 @@ const routes = [
       { path: 'due-date', component: () => import('pages/docs/due-date.vue') },
       { path: 'expiration', component: () => import('pages/docs/expiration.vue') },
       { path: 'gas', component: () => import('pages/docs/gas.vue') },
-      { path: 'developers', component: () => import('pages/docs/full-example.vue') },
+      { path: 'tag', component: () => import('pages/docs/tag.vue') },
+      { path: 'description', component: () => import('pages/docs/description.vue') },
       { path: 'mining-bot', component: () => import('pages/docs/mining-bot.vue') },
 
     ]

@@ -34,7 +34,7 @@
           <h5 class="text-center">Developers</h5>
           <p>Smart contract devs can integrate croneos by including a single header file (c++). only pay optional  fee if the cron job is executed successful else refund (expired, cancelled). Higher fees will increase your odds of on time execution.</p>
           <router-link to="/docs/getting-started" tag="a" class="text-link">
-            get started
+            Get started
           </router-link>
           
         </div>

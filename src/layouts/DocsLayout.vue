@@ -80,6 +80,26 @@
           </q-item-section>
         </q-item>
 
+        <q-item clickable to="/docs/tag" exact>
+          <!-- <q-item-section avatar>
+            <q-icon  name="check" />
+          </q-item-section> -->
+          <q-item-section>
+            <q-item-label>Tag</q-item-label>
+            <!-- <q-item-label caption>can be used for gas</q-item-label> -->
+          </q-item-section>
+        </q-item>
+
+        <q-item clickable to="/docs/description" exact>
+          <!-- <q-item-section avatar>
+            <q-icon  name="check" />
+          </q-item-section> -->
+          <q-item-section>
+            <q-item-label>Description</q-item-label>
+            <!-- <q-item-label caption>can be used for gas</q-item-label> -->
+          </q-item-section>
+        </q-item>
+
         <q-item clickable to="/docs/mining-bot" exact>
           <!-- <q-item-section avatar>
             <q-icon name="img:statics/vectors/bot.svg" />
