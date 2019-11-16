@@ -35,7 +35,7 @@
       content-class="bg-grey-2"
 
     >
-    <q-list :dense="false" >
+    <q-list :dense="true" >
         <!-- <q-item-label v-if="getAccountName" header>Welcome {{getAccountName}}</q-item-label> -->
         <q-item-label  header>Croneos Documentation</q-item-label>
 
@@ -49,7 +49,7 @@
             <!-- <q-item-label caption>can be used for gas</q-item-label> -->
           </q-item-section>
         </q-item>
-
+        <q-item-label  header>croneos::job</q-item-label>
         <q-item clickable to="/docs/due-date" exact>
           <!-- <q-item-section avatar>
             <q-icon  name="check" />
@@ -96,6 +96,16 @@
           </q-item-section> -->
           <q-item-section>
             <q-item-label>Description</q-item-label>
+            <!-- <q-item-label caption>can be used for gas</q-item-label> -->
+          </q-item-section>
+        </q-item>
+
+        <q-item clickable to="/docs/schedule-function" exact>
+          <!-- <q-item-section avatar>
+            <q-icon  name="check" />
+          </q-item-section> -->
+          <q-item-section>
+            <q-item-label>Schedule Function</q-item-label>
             <!-- <q-item-label caption>can be used for gas</q-item-label> -->
           </q-item-section>
         </q-item>

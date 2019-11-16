@@ -12,7 +12,8 @@
     <h5>Some Ideas...</h5>
     <p>Raspberry pi python lib that listen to a stream of table deltas from the croneos contract.</p>
     <p>Automated mining in the Browser via service worker.</p>
-    <i>I'll probably build such tools but first need to prioritize documentation etc. If you want to join the project please contact via github.</i>
+    <p>croneos cloud mining (firebase cloud functions/cron).</p>
+    <i>If you want to join the project please contact via github.</i>
 
   </q-page>
 </template>

@@ -5,7 +5,8 @@ const routes = [
     component: () => import('layouts/HomeLayout.vue'),
     children: [
       { path: '', component: () => import('pages/home.vue') },
-      { path: 'gas-tokens', component: () => import('pages/gas-tokens.vue') }
+      { path: 'gas-tokens', component: () => import('pages/gas-tokens.vue') },
+      { path: 'cron-token', component: () => import('pages/cron-token.vue') }
 
       
     ]
@@ -39,6 +40,7 @@ const routes = [
       { path: 'gas', component: () => import('pages/docs/gas.vue') },
       { path: 'tag', component: () => import('pages/docs/tag.vue') },
       { path: 'description', component: () => import('pages/docs/description.vue') },
+      { path: 'schedule-function', component: () => import('pages/docs/schedule-function.vue') },
       { path: 'mining-bot', component: () => import('pages/docs/mining-bot.vue') },
 
     ]
