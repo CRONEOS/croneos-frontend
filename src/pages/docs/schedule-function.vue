@@ -8,6 +8,8 @@
 
     <!-- <div class="info-box q-mt-md">A tag is optional. You can omit this property while configuring your croneos::job instance.</div> -->
 
+    <h6>Blacklist</h6>
+    <p>Some contracts are blacklisted. This means you can't schedule actions from them. (list blacklist).</p>
 
 
   </q-page>

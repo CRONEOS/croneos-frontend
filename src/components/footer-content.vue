@@ -34,11 +34,11 @@
        
       <div class="q-pa-sm ">
           
-          <div class="text-h6 text-weight-light q-mb-md">Follow Us</div>
-          <!-- <q-btn dense color="secondary" round  class="">
+          <div class="text-h6 text-weight-light q-mb-md ">Follow Us</div>
+          <q-btn dense color="secondary" round  @click="openURL(getConfig.social.telegram)" class="q-mr-md">
             <q-tooltip content-class="bg-primary">Visit our Telegram</q-tooltip>
             <q-icon name="img:statics/vectors/social/001-telegram.svg" size="24px"/>
-          </q-btn> -->
+          </q-btn>
           <q-btn dense color="secondary" round  @click="openURL(getConfig.social.github)">
             <q-tooltip content-class="bg-primary">Visit our Github repos</q-tooltip>
             <q-icon name="img:statics/vectors/social/027-github.svg" size="24px"/>

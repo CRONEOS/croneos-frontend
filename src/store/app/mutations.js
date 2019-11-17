@@ -9,3 +9,9 @@ export function setSettings(state, payload){
 export function setAllowedFeeTokens(state, payload){
     state.allowedFeeTokens = payload;
 }
+
+export function setCronjobsTableScopes(state, payload){
+    state.cronjobsTableScopes = payload;
+}
+
+

@@ -22,7 +22,7 @@ export function getAllowedFeeTokens(state){
 export function getAllowedFeeTokensSym(state, getters){
 
     if(state.allowedFeeTokens.length){
-        console.log('qddqssdsqd',state.allowedFeeTokens)
+
         let res = state.allowedFeeTokens.map(aft =>{
             let logo = getters.getConfig.tokens.find(t => t.symbol == aft.sym && t.account == aft.contract);
             logo = logo ? logo.logo : './statics/images/tokens/default.png';
@@ -34,6 +34,16 @@ export function getAllowedFeeTokensSym(state, getters){
     }
     else{
         return []
+    }
+
+}
+
+export function getNumberOfCronjobs(state){
+
+    if(state.cronjobsTableScopes.length){
+        let mainscope = state.cronjobsTableScopes.find(cs => cs.scope == state.config.cron_contract);
+
+        return mainscope ? mainscope.count/2 : 0;
     }
 
 }

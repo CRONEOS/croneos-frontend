@@ -2,7 +2,7 @@
   <q-page class=" full-height">
 
     <!-- <div class="diagonal"></div> -->
-    <div class="header_box">
+    <div class="header_box relative-position">
       <q-parallax src="./statics/images/bg.jpg" :height="450">
         
             <div class="text-center text-primary" style="">
@@ -12,6 +12,12 @@
             </div> 
         
       </q-parallax>
+      <div class="absolute-bottom-right text-caption q-pa-xs q-ma-xs bg-secondary cursor-pointer" style="opacity:0.9">
+        <span>#cronjobs </span><span><b>{{getNumberOfCronjobs}}</b></span>
+        <q-tooltip content-class="bg-secondary" :delay="500">
+          There are {{getNumberOfCronjobs}} jobs scheduled.
+        </q-tooltip>
+      </div>
     </div> 
 
 
@@ -19,6 +25,7 @@
   <div  class="center-page-content" >
 
     <div class="q-pa-sm text-white">
+      
       <h5 class="text-center">Background</h5>
 
       <p>Delayed transactions will be deprecated (EOSIO version xx) due to multiple issues it generates (list some of the issues). We propose CRONEOS as an alternative solution for enabling dapps to schedule future work. Smart contract developers can submit their scheduled tasks to an on chain pool. Miners can then execute these jobs. To align incentives we introduce an optional gas fee (multiple tokens allowed). The executer of the scheduled action will receive a (to be determined) portion of the fee as reward (see more about gas-reward model and relationship with CRON token). </p>
@@ -149,6 +156,7 @@ export default {
   computed: {
     ...mapGetters({
       getAccountName: "ual/getAccountName",
+      getNumberOfCronjobs: "app/getNumberOfCronjobs"
     })
   },
   methods: {

@@ -2,6 +2,9 @@ export async function initRoutine ({ dispatch }) {
 
     dispatch('fetchSettings');
     dispatch('fetchAllowedFeeTokens');
+    dispatch('fetchCronjobsByScope');
+    dispatch('fetchBlacklist');
+    
 }
 
 export async function fetchSettings ({ state, commit }) {
@@ -51,4 +54,39 @@ export async function fetchAllowedFeeTokens ({ state, commit }) {
     else{
         console.log('fetching gastokens failed');
     }
+}
+
+export async function fetchCronjobsByScope ({ state, commit }) {
+
+  let res = await this._vm.$eos.rpc.get_table_by_scope({
+      json: true,
+      code: state.config.cron_contract,
+      table: 'cronjobs',
+      limit: -1
+    });
+    if(res && res.rows.length){
+      console.log('fetched cronjobs by scope',res);
+      commit('setCronjobsTableScopes', res.rows);
+    }
+    else{
+        console.log('fetching cronjobs by scope failed');
+    }
+}
+
+export async function fetchBlacklist ({ state, commit }) {
+
+  let res = await this._vm.$eos.rpc.get_table_rows({
+    json: true,
+    code: state.config.cron_contract,
+    scope: state.config.cron_contract,
+    table: "blacklist",
+    limit: -1
+  });
+  if(res && res.rows.length){
+    console.log('fetched blacklist',res.rows);
+
+  }
+  else{
+      console.log('fetching blacklist failed');
+  }
 }

@@ -1,7 +1,8 @@
 {
     "cron_contract": "piecestest12",
     "social":{
-        "github": "https://github.com/CRONEOS"
+        "github": "https://github.com/CRONEOS",
+        "telegram": "https://t.me/croneos"
     },
     "tokens": [
         {
