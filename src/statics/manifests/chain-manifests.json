@@ -1,5 +1,5 @@
 {
-  "spec_version": "0.0.7",
+  "spec_version": "0.2.0",
   "manifests": [
 
     {
@@ -7,7 +7,7 @@
       "manifest": {
         "account": "piecesnbitss",
         "domain": "https://croneos.io",
-        "appmeta": "https://croneos.io/app-metadata.json#42a772be66cc29a7537a67b8f96be58b183ac5d4ee0a4c4ea5e6cb5faf4f7d5f",
+        "appmeta": "https://croneos.io/app-metadata.json#33b9ade23dff277075f7ef0182b5810121b7e83f02060542edaaf3f82252d6f0",
         "whitelist": [
           {
             "contract": "",
