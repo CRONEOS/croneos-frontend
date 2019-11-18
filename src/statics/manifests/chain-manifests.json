@@ -23,8 +23,8 @@
       "chainId": "e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473",
       "manifest": {
         "account": "piecesnbitss",
-        "domain": "http://localhost:8080",
-        "appmeta": "http://localhost:8080/app-metadata.json#42a772be66cc29a7537a67b8f96be58b183ac5d4ee0a4c4ea5e6cb5faf4f7d5f",
+        "domain": "https://croneos.io",
+        "appmeta": "https://croneos.io/app-metadata.json#42a772be66cc29a7537a67b8f96be58b183ac5d4ee0a4c4ea5e6cb5faf4f7d5f",
         "whitelist": [
           {
             "contract": "",
