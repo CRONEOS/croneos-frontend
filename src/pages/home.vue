@@ -156,8 +156,7 @@
     <div class="q-pa-sm text-white">
       <h5 class="text-center text-weight-light">...Design and infographics...</h5>
       <div class="text-center">
-        I'm not tallented enough to design nice websites let alone infographics. If you're a designer and want to
-        help, please reach out via our telegram.
+        I'm not tallented enough to design nice websites let alone infographics. Also English isn't my native language so text improvements are needed too :-). If you feel you can add value, please reach out via our telegram.
       </div>
     </div>
 
