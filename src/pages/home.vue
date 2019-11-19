@@ -63,13 +63,14 @@
     <div class="bg-primary-light q-pb-xl">
       <div class="q-pa-sm text-black center-page-content">
         <h5 class="text-center text-weight-light">Decentralized & Trustless</h5>
-        <div>
+        <p>
           The execution of the scheduled jobs don't depend on a single entity.
           Anyone can execute jobs from the pool. When using croneos for your
           scheduled tasks you don't need to rely on scripts or non native
           services that can fail. Croneos is a base layer solution for scheduled
           jobs and lives entirly on the main chain.
-        </div>
+        </p>
+        <p>A DAC will be created to manage the croneos contract.</p>
       </div>
     </div>
 
