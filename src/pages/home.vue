@@ -42,7 +42,7 @@
 
         <p>
           Delayed transactions will be deprecated (EOSIO version xx) due to
-          multiple issues it generates (list some of the issues). We propose
+          multiple <a href="https://github.com/EOSIO/spec-repo/blob/master/esr_deprecate_deferred.md" class="text-link" target="_blank">issues</a> it generates. We propose
           CRONEOS as an alternative solution for enabling dapps to schedule
           future work. Smart contract developers can submit their scheduled
           tasks to an on chain pool. Miners can then execute these jobs. To

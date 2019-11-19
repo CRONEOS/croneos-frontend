@@ -130,6 +130,7 @@ export async function transact({ state, dispatch, commit }, payload) {
       dispatch('hideSigningOverlay', 1000);
     }
     commit('setIsTransacting', false);
+    console.log(res);
     return res;
   }catch(e){
     // console.log(e, e.cause);
