@@ -7,7 +7,7 @@
       "manifest": {
         "account": "piecesnbitss",
         "domain": "https://croneos.io",
-        "appmeta": "https://croneos.io/app-metadata.json#b0a48025aac13e7fae2111b268010c956bc4f53f836b9f127dfc2e34d4aa494f",
+        "appmeta": "https://croneos.io/app-metadata.json#a2249d3137239529cc7131c130958f3eacfc49dbf21a636e9cbf8ef4ba458ff2",
         "whitelist": [
           {
             "contract": "",
