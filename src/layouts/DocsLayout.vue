@@ -50,6 +50,15 @@
           </q-item-section>
         </q-item>
         <q-item-label  header>croneos::job</q-item-label>
+        <q-item clickable to="/docs/owner" exact>
+          <!-- <q-item-section avatar>
+            <q-icon  name="check" />
+          </q-item-section> -->
+          <q-item-section>
+            <q-item-label>Owner</q-item-label>
+            <!-- <q-item-label caption>can be used for gas</q-item-label> -->
+          </q-item-section>
+        </q-item>
         <q-item clickable to="/docs/due-date" exact>
           <!-- <q-item-section avatar>
             <q-icon  name="check" />

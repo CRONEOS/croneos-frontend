@@ -35,6 +35,7 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/docs/getting-started.vue') },
       { path: 'getting-started', component: () => import('pages/docs/getting-started.vue') },
+      { path: 'owner', component: () => import('pages/docs/owner.vue') },
       { path: 'due-date', component: () => import('pages/docs/due-date.vue') },
       { path: 'expiration', component: () => import('pages/docs/expiration.vue') },
       { path: 'gas', component: () => import('pages/docs/gas.vue') },
