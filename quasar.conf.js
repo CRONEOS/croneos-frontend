@@ -86,7 +86,8 @@ module.exports = function (ctx) {
         'QParallax',
         'QPageScroller',
         'QSeparator',
-        'QScrollArea'
+        'QScrollArea',
+        'QExpansionItem'
 
       ],
 
