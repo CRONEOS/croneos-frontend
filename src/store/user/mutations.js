@@ -7,3 +7,7 @@ export function setDeposits (state, payload) {
     state.deposits = payload
 }
 
+export function setAccount (state, payload) {
+    state.account = payload
+}
+

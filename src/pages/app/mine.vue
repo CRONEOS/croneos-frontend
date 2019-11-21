@@ -4,6 +4,7 @@
     <div  class="row q-col-gutter-lg text-white" >
       <reward-balance :reward="reward.adj_p_balance" v-for="(reward,i) in getRewards" :key="`reward${i}`" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2"/>
     </div>
+    <div class="q-mt-md">My CPU {{JSON.stringify(getCPUStats)}}</div>
 
 
     <h5>Scheduled Jobs</h5>
@@ -47,7 +48,8 @@ export default {
     ...mapGetters({
       getCLOCK: "app/getCLOCK",
       getCronjobs: "cronjobs/getCronjobs",
-      getRewards: "user/getRewards"
+      getRewards: "user/getRewards",
+      getCPUStats: "user/getCPUStats"
     })
   },
   methods: {
