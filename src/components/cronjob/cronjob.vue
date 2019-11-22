@@ -242,6 +242,7 @@ export default {
         setTimeout(() => {
           this.$emit("executed");
           this.$store.dispatch('user/fetchRewards', this.getAccountName);
+          this.$store.dispatch('user/fetchAccount', this.getAccountName);
         }, 1000);
       } else {
 

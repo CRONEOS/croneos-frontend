@@ -9,6 +9,7 @@ export async function loggedInRoutine ({ dispatch }, payload) {
 export async function loggedOutRoutine ({ dispatch, commit }) {
   commit('setRewards', []);
   commit('setDeposits', []);
+  commit('setAccount', false);
 }
 
 
@@ -29,7 +30,8 @@ export async function fetchRewards ({ commit, rootState, rootGetters }, accountn
 }
 
 export async function fetchAccount ({ commit, rootState, rootGetters }, accountname) {
-  //let account = rootGetters.getAccountName || 
+  //let account = rootGetters.getAccountName ||
+  if(!accountname) return;
   let res = await this._vm.$eos.rpc.get_account(accountname);
     if(res ){
       console.log(res);
