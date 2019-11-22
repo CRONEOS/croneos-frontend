@@ -4,13 +4,13 @@
 
     <div class="row q-col-gutter-lg">
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="q-pa-sm">
-          <cpu-resource  />
+        <div class=" q-pb-md bg-secondary rounded-borders shadow-3">
+          <cpu-resource dark/>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="q-pa-sm">
-          <net-resource  />
+        <div class="q-pb-md bg-secondary rounded-borders shadow-3">
+          <net-resource  dark/>
         </div>
       </div>
     </div>
@@ -18,11 +18,10 @@
 
 
 
-   
-
-    <h5>Mining Rewards</h5>
-    <div  class="row q-col-gutter-lg text-white" >
-      <reward-balance :reward="reward.adj_p_balance" v-for="(reward,i) in getRewards" :key="`reward${i}`" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2"/>
+    <div class="row q-col-gutter-lg q-mt-sm">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <reward-balances dark class="bg-secondary rounded-borders shadow-3 q-pb-md"/>
+      </div>
     </div>
  
     
@@ -50,14 +49,14 @@
 <script>
 import { mapGetters } from "vuex";
 import cronjob from "components/cronjob/cronjob";
-import rewardBalance from 'components/reward/reward-balance';
+import rewardBalances from 'components/reward/reward-balances';
 import cpuResource from 'components/cpu-resource';
 import netResource from 'components/net-resource';
 export default {
   // name: 'PageName',
   components: {
     cronjob,
-    rewardBalance,
+    rewardBalances,
     cpuResource,
     netResource
   },
@@ -70,8 +69,8 @@ export default {
   computed: {
     ...mapGetters({
       getCLOCK: "app/getCLOCK",
-      getCronjobs: "cronjobs/getCronjobs",
-      getRewards: "user/getRewards",
+      getCronjobs: "cronjobs/getCronjobs"
+     
     })
   },
   methods: {

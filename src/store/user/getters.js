@@ -1,13 +1,13 @@
 function parseMicroSeconds(us, precision = 2) {
   us = Number(us);
   if (us >= 1000000) {
-    var sec = (us / 1000000).toFixed(precision);
+    let sec = (us / 1000000).toFixed(precision);
     return sec + " sec";
   } else if (us >= 1000) {
     let ms = (us / 1000).toFixed(precision);
     return ms + " ms";
   } else {
-    u = us.toFixed(precision);
+    let u = us.toFixed(precision);
     return u + " µs";
   }
 }
@@ -36,6 +36,8 @@ export function getCPUStats(state) {
     res.parsed.available = parseMicroSeconds(cpu.available);
     res.parsed.used = parseMicroSeconds(cpu.used);
     res.parsed.max = parseMicroSeconds(cpu.max);
+    res.self_delegated_cpu = state.account.self_delegated_bandwidth.cpu_weight;
+    res.total_delegated_cpu = state.account.total_resources.cpu_weight;
     return res;
   }
 }
@@ -49,6 +51,8 @@ export function getNETStats(state) {
     res.parsed.available = parseBytes(net.available);
     res.parsed.used = parseBytes(net.used);
     res.parsed.max = parseBytes(net.max);
+    res.self_delegated_net = state.account.self_delegated_bandwidth.net_weight;
+    res.total_delegated_net = state.account.total_resources.net_weight;
     return res;
   }
 }

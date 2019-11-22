@@ -1,14 +1,17 @@
 <template>
-      <div v-if="reward"  >
-        <!-- {{parseReward()}} -->
-        <div class="q-pa-sm bg-secondary rounded-borders shadow-3">
-            <div class=" q-mb-md">{{ reward}}</div>
-            <div class="row justify-end">
-              <q-btn label="withdraw" color="primary" @click="withdraw( )" />
-            </div>
-            
-        </div>
-      </div>
+    
+        <q-item dark v-if="reward">
+          <q-item-section avatar top>
+            <q-icon name="folder" color="primary" text-color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label caption>{{ reward}}</q-item-label>
+          </q-item-section>
+          <q-item-section side>
+            <q-btn label="withdraw" color="primary" @click="withdraw( )" dense size="sm"/>
+          </q-item-section>
+        </q-item>
+    
 </template>
 
 <script>
@@ -30,7 +33,8 @@ export default {
     ...mapGetters({
       getAccountName: "ual/getAccountName",
       getSettings: "app/getSettings",
-      getConfig: "app/getConfig"
+      getConfig: "app/getConfig",
+      
     }),
     // getParsedReward(){
     //   if(!this.reward) return;
