@@ -1,14 +1,15 @@
 <template>
     
         <q-item dark v-if="reward">
-          <q-item-section avatar top>
-            <q-icon name="folder" color="primary" text-color="white" />
+          <q-item-section avatar>
+            <q-spinner v-if="is_withdrawing"/>
+            <q-icon v-else name="folder" color="primary" text-color="white" />
           </q-item-section>
           <q-item-section>
             <q-item-label caption>{{ reward}}</q-item-label>
           </q-item-section>
           <q-item-section side>
-            <q-btn label="withdraw" color="primary" @click="withdraw( )" dense size="sm"/>
+            <q-btn label="withdraw" color="primary" @click="withdraw()"  size="sm" :disabled="getIsTransacting"/>
           </q-item-section>
         </q-item>
     
@@ -27,6 +28,7 @@ export default {
   data () {
     return {
       cron_contract: "piecestest12",
+      is_withdrawing: false
     }
   },
   computed: {
@@ -34,6 +36,7 @@ export default {
       getAccountName: "ual/getAccountName",
       getSettings: "app/getSettings",
       getConfig: "app/getConfig",
+      getIsTransacting: "ual/getIsTransacting"
       
     }),
     // getParsedReward(){
@@ -59,7 +62,7 @@ export default {
       return res;
     },
     async withdraw(){
-    
+      this.is_withdrawing=true;
       let actions = [
         {
           account: this.getConfig.cron_contract,
@@ -70,10 +73,11 @@ export default {
           }
         }
       ];
-      let res = await this.$store.dispatch("ual/transact", { actions: actions });
+      let res = await this.$store.dispatch("ual/transact", { actions: actions, disable_signing_overlay: true });
       if(res){
         setTimeout(()=>{this.$store.dispatch("user/fetchRewards", this.getAccountName)}, 1000);
       }
+      this.is_withdrawing=false;
     }
 
   }
