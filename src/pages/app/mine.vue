@@ -1,8 +1,24 @@
 <template>
   <q-page padding class="">
 
-   <cpu-resource  />
-   <net-resource class="q-mt-md" />
+
+    <div class="row q-col-gutter-lg">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="q-pa-sm">
+          <cpu-resource  />
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="q-pa-sm">
+          <net-resource  />
+        </div>
+      </div>
+    </div>
+
+
+
+
+   
 
     <h5>Mining Rewards</h5>
     <div  class="row q-col-gutter-lg text-white" >

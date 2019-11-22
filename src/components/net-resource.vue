@@ -21,12 +21,13 @@
           <q-item-label>
           <q-linear-progress
             :value="getNETStats.perc_used/100"
-            size="10px"
+            size="20px"
             color="primary"
           >
-            <q-tooltip content-class="bg-secondary">
-              <div>used {{(getNETStats.perc_used).toFixed(4)}} % </div>
-            </q-tooltip>
+            <div class="absolute-full flex flex-center text-black" style="font-size:11px">
+              <!-- <q-badge color="primary-light" text-color="accent" :label="(getNETStats.perc_used).toFixed(2)+'%'" /> -->
+              {{(getNETStats.perc_used).toFixed(2)+'%'}}
+            </div>
           </q-linear-progress>
           </q-item-label>
           <q-item-label caption>
