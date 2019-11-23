@@ -1,6 +1,7 @@
-# Quasar App (ual-quasar)
+# Croneos frontend
 
-A Quasar Framework app
+This is the frontend for croneos.
+See [croneos.io](https://croneos.io)
 
 ## Install the dependencies
 ```bash
