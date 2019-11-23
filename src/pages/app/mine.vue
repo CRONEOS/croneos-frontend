@@ -4,23 +4,19 @@
 
     <div class="row q-col-gutter-lg">
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class=" q-pb-md bg-secondary rounded-borders shadow-3">
+        <div class="q-pb-md bg-secondary rounded-borders shadow-3 full-height">
+          <reward-balances dark />
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class=" q-pb-md bg-secondary rounded-borders shadow-3 full-height">
           <cpu-resource dark/>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="q-pb-md bg-secondary rounded-borders shadow-3">
+        <div class="q-pb-md bg-secondary rounded-borders shadow-3 full-height">
           <net-resource  dark/>
         </div>
-      </div>
-    </div>
-
-
-
-
-    <div class="row q-col-gutter-lg q-mt-sm">
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <reward-balances dark class="bg-secondary rounded-borders shadow-3 q-pb-md"/>
       </div>
     </div>
  

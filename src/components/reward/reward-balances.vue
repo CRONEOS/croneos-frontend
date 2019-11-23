@@ -1,10 +1,14 @@
 <template>
 <div>
-    <q-list :dark="dark" v-if="getRewards && getRewards.length">
-      <q-item-label header>MINING REWARDS</q-item-label>
-      <reward-balance :reward="reward.adj_p_balance" v-for="(reward,i) in getRewards" :key="`reward${i}`" />
-    </q-list>
-    <q-list :dark="dark" v-else>
+    
+      <q-list :dark="dark" v-if="getRewards && getRewards.length">
+        <q-item-label header>MINING REWARDS</q-item-label>
+        <q-scroll-area :visible="true" :thumb-style="thumbStyle" style="height: 106px; width:100%">
+          <reward-balance :reward="reward.adj_p_balance" v-for="(reward,i) in getRewards" :key="`reward${i}`" />
+        </q-scroll-area>
+      </q-list>
+    
+    <q-list :dark="dark" v-else dense>
       <q-item-label header>MINING REWARDS</q-item-label>
       <q-item>
         <q-item-section>
@@ -33,7 +37,15 @@ export default {
     })
   },
   data () {
-    return {}
+    return {
+      thumbStyle: {
+        right: "0px",
+        borderRadius: "5px",
+        backgroundColor: "#027be3",
+        width: "5px",
+        opacity: 0.75
+      }
+    }
   }
 }
 </script>
