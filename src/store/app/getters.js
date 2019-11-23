@@ -48,4 +48,12 @@ export function getNumberOfCronjobs(state){
 
 }
 
+export function getIconForSymbol(state) {
+    return symbol => {
+        let token_from_config = state.config.tokens.find(t => symbol == t.symbol);
+        let token_icon = token_from_config ? token_from_config.logo : './statics/images/tokens/default.png';
+        return token_icon;
+    };
+  }
+
 

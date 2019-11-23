@@ -1,9 +1,9 @@
 <template>
   <div>
 
-      <q-list dense :dark="dark">
+      <q-list dense :dark="dark" v-if="getCPUStats">
         <q-item-label header>CPU</q-item-label>
-        <div v-if="getCPUStats">
+        <!-- <div v-if="getCPUStats"> -->
           <q-item>
             <q-item-section side>
               <q-item-label caption>Total Staked</q-item-label>
@@ -45,8 +45,17 @@
             </q-item-label>
           </q-item-section>
         </q-item>
-        </div>
       </q-list>
+
+      <q-list v-else dense :dark="dark">
+        <q-item-label header>CPU</q-item-label>
+        <q-item>
+          <q-item-section>
+            <q-item-label caption>Please log in</q-item-label>
+          </q-item-section>   
+        </q-item>
+      </q-list>
+
     
   </div>
 </template>

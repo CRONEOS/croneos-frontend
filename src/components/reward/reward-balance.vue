@@ -3,7 +3,7 @@
         <q-item dark v-if="reward">
           <q-item-section avatar>
             <q-spinner v-if="is_withdrawing"/>
-            <q-icon v-else name="folder" color="primary" text-color="white" />
+            <q-icon v-else :name="`img:${getIconForSymbol(reward.split(' ')[1])}`" color="primary" text-color="white" />
           </q-item-section>
           <q-item-section>
             <q-item-label caption>{{ reward}}</q-item-label>
@@ -36,17 +36,11 @@ export default {
       getAccountName: "ual/getAccountName",
       getSettings: "app/getSettings",
       getConfig: "app/getConfig",
-      getIsTransacting: "ual/getIsTransacting"
+      getIsTransacting: "ual/getIsTransacting",
+      getIconForSymbol: "app/getIconForSymbol"
       
-    }),
-    // getParsedReward(){
-    //   if(!this.reward) return;
-    //   let {amount_p, sym} = reward.split(',');
-    //   let res = {};
-    //   res.symbol = sym;
-    //   res.amount = parseFloat(amount_p).toFixed(4);
-    //   return res;
-    // },
+    })
+    
     
   },
   methods:{
