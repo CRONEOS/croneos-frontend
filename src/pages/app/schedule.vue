@@ -50,6 +50,7 @@ export default {
   methods:{
  
     async getMyCronJobs(){
+      if(!this.getAccountName) return;
       this.jobs_are_loading=true;
       let res  = await this.$eos.rpc.get_table_rows({
         json: true,
