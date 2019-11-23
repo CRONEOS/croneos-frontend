@@ -7,7 +7,7 @@ export async function loggedInRoutine ({ dispatch }, payload) {
 }
 
 export async function loggedOutRoutine ({ dispatch, commit }) {
-  commit('setRewards', []);
+  commit('setRewards', false);
   commit('setDeposits', []);
   commit('setAccount', false);
 }

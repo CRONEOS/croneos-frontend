@@ -1,8 +1,7 @@
 <template>
 <div>
-    
-      <q-list :dark="dark" v-if="getRewards && getRewards.length">
-        <q-item-label header>MINING REWARDS</q-item-label>
+      <q-list :dark="dark" v-if="getRewards" >
+        <q-item-label header>MINING REWARDS ({{getRewards.length}})</q-item-label>
         <q-scroll-area :visible="true" :thumb-style="thumbStyle" style="height: 106px; width:100%">
           <reward-balance :reward="reward.adj_p_balance" v-for="(reward,i) in getRewards" :key="`reward${i}`" />
         </q-scroll-area>

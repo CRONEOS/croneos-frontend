@@ -2,16 +2,18 @@
   <q-page padding class="overflow-hidden">
     <h5>Gas Deposits</h5>
     <deposits />
-    <h5>My Scheduled Jobs</h5>
-    <p>See the docs for adding your jobs</p>
-    <div class="q-mt-md">
-      
+    <h5 class="row items-center">
+      <div>My Scheduled Jobs</div>
+      <q-btn icon="refresh" :loading="jobs_are_loading" flat dense color="primary" @click="getMyCronJobs" class="q-ml-md"/>
+    </h5>
+    
+    <div>
       <cronjobs-table :cronjobs="mycronjobs"/>
-      <q-btn label="dev reload" @click="getMyCronJobs" color="primary"/>
+      <p class="q-mt-sm">See the <router-link to="/docs/getting-started" tag="a" class="text-link">documentation</router-link> for adding your jobs</p>
     </div>
 
 
-    <scheduler class="q-mt-xl" @scheduled="getMyCronJobs"/>
+    <scheduler v-if="getAccountName=='piecesnbitss'" class="q-mt-xl" @scheduled="getMyCronJobs"/>
 
 
   </q-page>
@@ -34,6 +36,7 @@ export default {
     return {
       cron_contract: "piecestest12",
       mycronjobs:[],
+      jobs_are_loading: false
     };
   },
   computed: {
@@ -47,6 +50,7 @@ export default {
   methods:{
  
     async getMyCronJobs(){
+      this.jobs_are_loading=true;
       let res  = await this.$eos.rpc.get_table_rows({
         json: true,
         code: this.cron_contract,
@@ -64,7 +68,8 @@ export default {
         // show_payer : false,
      });
      console.log(res)
-     this.mycronjobs = res.rows.map(mcj => {mcj.__index=null; return mcj})
+     this.mycronjobs = res.rows.map(mcj => {mcj.__index=null; return mcj});
+     this.jobs_are_loading=false;
     },
 
     updateProxy () {

@@ -21,8 +21,10 @@
     </div>
  
     
-    <h5>Scheduled Jobs</h5>
-    <p>This page shows all mineable cronjobs. You can mine manual from this page but it will probably not work when more miners (bots) enter the croneos platform. In fact bots are an essential part for on time execution. Anyone can start a miner, enjoy while the competition (mining difficulty) is low. Learn more about bot mining here (link)</p>
+    <h5 class="row items-center">
+      <div>Mineables</div>
+      <q-btn icon="refresh" :loading="jobs_are_loading" flat dense color="primary" @click="$store.dispatch('cronjobs/fetchCronjobs');" class="q-ml-md"/>
+    </h5>
     <transition-group
       v-if="getCronjobs.length"
       enter-active-class="animated fadeIn"
@@ -37,8 +39,7 @@
         @executed="removeExecutedJob(i)"
       />
     </transition-group>
-    <div v-else> No jobs</div>
-    <q-btn label="dev reload" color="primary" @click="$store.dispatch('cronjobs/fetchCronjobs');" class="q-mt-md"/>
+    <div v-else>No jobs</div>
   </q-page>
 </template>
 
@@ -58,7 +59,8 @@ export default {
   },
   data() {
     return {
-      CLOCK_TIMER: null
+      CLOCK_TIMER: null,
+      jobs_are_loading: false
 
     };
   },
@@ -75,10 +77,15 @@ export default {
       console.log("job at array position", e, "executed");
       // this.cronjobs.splice(e, 1);
       this.$store.commit('cronjobs/removeCronjobByIndex', e);
+    },
+    async loadJobs(){
+      this.jobs_are_loading = true;
+      await this.$store.dispatch('cronjobs/fetchCronjobs');
+      this.jobs_are_loading = false;
     }
   },
   mounted(){
-    this.$store.dispatch('cronjobs/fetchCronjobs');
+    this.loadJobs();
     if(!this.CLOCK_TIMER || !this.getCLOCK){
       this.$store.commit("app/setCLOCK", new Date().getTime());
       this.CLOCK_TIMER = setInterval(() => {
