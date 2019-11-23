@@ -9,7 +9,7 @@
             <q-item-label caption>{{ reward}}</q-item-label>
           </q-item-section>
           <q-item-section side>
-            <q-btn label="withdraw" color="primary" @click="withdraw()"  size="sm" :disabled="getIsTransacting"/>
+            <q-btn label="withdraw" color="primary" @click="withdraw()"  size="sm" :disabled="getIsTransacting || !parseReward().can_withdraw"/>
           </q-item-section>
         </q-item>
     
@@ -38,9 +38,8 @@ export default {
       getConfig: "app/getConfig",
       getIsTransacting: "ual/getIsTransacting",
       getIconForSymbol: "app/getIconForSymbol"
-      
     })
-    
+
     
   },
   methods:{

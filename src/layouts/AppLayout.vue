@@ -44,8 +44,8 @@
             <q-icon name="ion-hammer" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Mine</q-item-label>
-            <q-item-label caption>list scheduled jobs</q-item-label>
+            <q-item-label>Miner</q-item-label>
+            <q-item-label caption>Dashoard</q-item-label>
           </q-item-section>
         </q-item>
 
@@ -65,7 +65,7 @@
             <q-icon name="ion-alarm" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>My Scheduled Jobs</q-item-label>
+            <q-item-label>Schedule</q-item-label>
             <q-item-label caption>dashboard</q-item-label>
           </q-item-section>
         </q-item>
