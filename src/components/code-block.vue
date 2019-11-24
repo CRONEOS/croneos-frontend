@@ -12,7 +12,7 @@
         :icon="iconname"
         round
         color="primary"
-        v-clipboard:copy="code"
+        v-clipboard:copy="remote_snippet || code"
         v-clipboard:success="onCopy"
         v-clipboard:error="onError"
       >

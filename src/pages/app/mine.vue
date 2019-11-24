@@ -1,8 +1,10 @@
 <template>
   <q-page padding class="">
 
+<transition enter-active-class="animated fadeInDown" leave-active-class="animated fadeOutUp"  mode="in-out" tag="div">
 
-    <div class="row q-col-gutter-lg">
+  <div v-if="show_user_stats" >
+    <div  class="row q-col-gutter-lg">
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="q-pb-md bg-secondary rounded-borders shadow-3 full-height">
           <reward-balances dark />
@@ -19,6 +21,12 @@
         </div>
       </div>
     </div>
+  </div>
+  
+</transition>
+<!-- <div  class="row justify-center" >
+  <q-btn :label="show_user_stats?'x': 'show details'" flat size="sm" @click="show_user_stats=!show_user_stats" />
+</div> -->
  
     
     <h5 class="row items-center">
@@ -60,7 +68,8 @@ export default {
   data() {
     return {
       CLOCK_TIMER: null,
-      jobs_are_loading: false
+      jobs_are_loading: false,
+      show_user_stats: true
 
     };
   },
