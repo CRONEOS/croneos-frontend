@@ -25,8 +25,8 @@ export default {
       description:"",
       gas_fee:'0.0001 KASDAC',
       job_tag:'',
-      expiration_date_time: '2019-11-04T21:12:10',
-      due_date_time:'2019-11-04T21:12:00',
+      expiration_date_time: '2019-11-04T21:12:10', //1970-01-01T00:00:00 UTC
+      due_date_time:'1970-01-01T00:00:00',
       delay_sec:"30",
       expiration_sec: "10",
       cron_contract: "piecestest12",
