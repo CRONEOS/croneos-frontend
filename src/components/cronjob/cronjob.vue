@@ -91,12 +91,18 @@
                 <div v-if="!getTimeStats.expired">
                   <q-btn
                     v-if="getTimeStats.ms_left===0"
-                    label="mine"
                     color="primary"
                     @click="executeJob(cronjob.id)"
                     class="full-width"
                     :disabled="getIsTransacting"
-                  />
+                  >
+                    <q-icon v-if="cronjob.auth_bouncer" name="mdi-shield-key" class="q-mr-sm">
+                        <q-tooltip content-class="bg-secondary">
+                          Mining resticted by auth: {{cronjob.auth_bouncer}}
+                        </q-tooltip>
+                    </q-icon>
+                    <span>mine</span>
+                  </q-btn>
                   <q-btn
                     v-else
                     label="waiting"

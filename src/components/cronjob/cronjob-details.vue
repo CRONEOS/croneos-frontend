@@ -40,6 +40,12 @@
           </q-item-section>
         </q-item>
 
+        <q-item clickable v-ripple v-if="cronjob.auth_bouncer">
+          <q-item-section avatar>
+            miner auth
+          </q-item-section>
+          <q-item-section>{{cronjob.auth_bouncer}}</q-item-section>
+        </q-item>
 
         <q-item clickable v-ripple>
           <q-item-section avatar>
