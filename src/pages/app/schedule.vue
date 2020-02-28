@@ -34,7 +34,6 @@ export default {
   },
   data() {
     return {
-      cron_contract: "piecestest12",
       mycronjobs:[],
       jobs_are_loading: false
     };
@@ -54,8 +53,8 @@ export default {
       this.jobs_are_loading=true;
       let res  = await this.$eos.rpc.get_table_rows({
         json: true,
-        code: this.cron_contract,
-        scope: this.cron_contract,
+        code: this.getConfig.cron_contract,
+        scope: this.getConfig.cron_contract,
         table: "cronjobs",
         
         // table_key : '',

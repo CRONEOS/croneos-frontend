@@ -178,7 +178,8 @@ export default {
     ...mapGetters({
       getAccountName: "ual/getAccountName",
       getCLOCK: "app/getCLOCK",
-      getIsTransacting: "ual/getIsTransacting"
+      getIsTransacting: "ual/getIsTransacting",
+      getConfig: "app/getConfig"
     }),
     getTimeStats() {
       let stats = {
@@ -223,11 +224,13 @@ export default {
 
       let actions = [
         {
-          account: "piecestest12",
+          account: this.getConfig.cron_contract,
           name: "exec",
           data: {
             executer: this.getAccountName,
-            id: id
+            id: id,
+            scope:"",
+            oracle_response: []
           }
         }
       ];

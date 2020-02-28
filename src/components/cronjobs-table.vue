@@ -173,6 +173,15 @@ data () {
           sortable: false
         },
         {
+          name: 'type',
+          required: false,
+          label: 'Type',
+          align: 'left',
+          field: row => row.type,
+          //format: val => `${new Date(val+'.000Z')}`,
+          sortable: false
+        },
+        {
           name: 'extra',
           required: false,
           label: '',
@@ -194,7 +203,8 @@ data () {
   },
   computed: {
     ...mapGetters({
-      getAccountName: "ual/getAccountName"
+      getAccountName: "ual/getAccountName",
+      getConfig: "app/getConfig"
 
     })
   },
@@ -202,11 +212,12 @@ data () {
     async cancelJob(id){
       let actions = [
         {
-          account: "piecestest12",
+          account: this.getConfig.cron_contract,
           name: "cancel",
           data: {
             owner: this.getAccountName,
-            id: id
+            id: id,
+            scope: ""
           }
         }
       ];

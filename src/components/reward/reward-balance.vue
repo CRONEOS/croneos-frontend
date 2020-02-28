@@ -27,7 +27,7 @@ export default {
   },
   data () {
     return {
-      cron_contract: "piecestest12",
+
       is_withdrawing: false
     }
   },

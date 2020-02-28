@@ -3,10 +3,11 @@
         <h5>test dev</h5>
     <q-input label="account" v-model="action.account" readonly/>
     <q-input label="action name" v-model="action.name" readonly/>
-    <q-input label="gass fee" v-model="gas_fee"/>
+    <q-input label="gas fee" v-model="gas_fee"/>
     <q-input label="delay sec" v-model="delay_sec"/>
     <q-input label="expiration sec" v-model="expiration_sec"/>
     <q-input label="tag" v-model="job_tag"/>
+    <q-input label="scope" v-model="scope" />
     <q-input label="description" v-model="description"/>
     <q-btn label="schedule" @click="processAction" color="primary"/>
       </div>
@@ -23,13 +24,14 @@ export default {
   data() {
     return {
       description:"",
-      gas_fee:'0.0001 KASDAC',
+      scope: "",
+      gas_fee:'0.0001 EOS',
       job_tag:'',
-      expiration_date_time: '2019-11-04T21:12:10', //1970-01-01T00:00:00 UTC
+      expiration_date_time: '1970-01-01T00:00:00', //1970-01-01T00:00:00 UTC
       due_date_time:'1970-01-01T00:00:00',
       delay_sec:"30",
       expiration_sec: "10",
-      cron_contract: "piecestest12",
+      cron_contract: "",
       action:{
         account: "dacelections",
         name: "newperiode",
@@ -66,14 +68,17 @@ export default {
           name: "schedule",
           data: {
             owner: this.getAccountName,
+            scope: this.scope,
             tag: this.job_tag,
+            auth_bouncer: "",
             actions: [serialized_action],
             due_date: this.due_date_time,
             delay_sec: this.delay_sec,
             expiration: this.expiration_date_time,
             expiration_sec: this.expiration_sec,
             gas_fee: this.gas_fee,
-            description: this.description
+            description: this.description,
+            oracle_srcs: []
           }
         }
       ];
