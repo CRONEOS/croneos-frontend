@@ -154,12 +154,12 @@
 
     </div> -->
 
-    <div class="q-pa-sm text-white">
+    <!-- <div class="q-pa-sm text-white">
       <h5 class="text-center text-weight-light">...Design and infographics...</h5>
       <div class="text-center">
         I'm not tallented enough to design nice websites let alone infographics. Also English isn't my native language so text improvements are needed too :-). If you feel you can add value, please reach out via our telegram.
       </div>
-    </div>
+    </div> -->
 
     <div style="height:200px"></div>
 

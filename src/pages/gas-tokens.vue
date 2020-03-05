@@ -7,8 +7,7 @@
 
       <p class="text-italic">We are not listing new gas tokens at this stage.</p>
 
-      <div class="q-mt-xl">Pay gas in your native token</div>
-      <div>Add utility to token</div>
+
       <div class="q-mt-md">
         <q-btn label="apply" :disabled="true" color="primary" />
         <q-btn label="go back" flat color="primary" @click="$router.go(-1)" />

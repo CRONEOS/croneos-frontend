@@ -49,7 +49,7 @@
   
   <q-separator class="q-mt-lg"/>
 
-  <div class="row justify-end">© CRONEOS 2019</div>
+  <div class="row justify-end q-my-sm">© CRONEOS 2019-{{new Date().getFullYear()}}</div>
   </div>
   
 
