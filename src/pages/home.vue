@@ -11,7 +11,7 @@
             Mine Scheduled Actions
           </div>
           <div class="text-caption bg-primary text-secondary text-weight-bold">
-            * A replacement for deferred transactions on EOS *
+            * A replacement for deferred transactions on EOSIO chains *
           </div>
           <q-btn
             to="mine"
