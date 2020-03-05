@@ -23,7 +23,7 @@
         {
             "symbol": "BOID",
             "account": "boidcomtoken",
-            "logo": "./statics/images/tokens/jungle.png"
+            "logo": "./statics/images/tokens/boid.png"
         },
         {
             "symbol": "JUNGLE",

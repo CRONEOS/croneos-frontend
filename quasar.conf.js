@@ -87,7 +87,8 @@ module.exports = function (ctx) {
         'QPageScroller',
         'QSeparator',
         'QScrollArea',
-        'QExpansionItem'
+        'QExpansionItem',
+        'QImg'
 
       ],
 

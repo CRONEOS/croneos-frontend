@@ -2,8 +2,8 @@
   <div v-if="getAllowedFeeTokensSym.length" class="row items-center">
     <!-- {{getAllowedFeeTokensSym}} -->
     <div v-for="token in getAllowedFeeTokensSym" :key="token.sym" class="column items-center q-mr-lg">
-        <img :src="token.logo" height="30px" />
-        <div>{{token.sym}}</div>
+        <q-img :src="token.logo" contain style="height:45px; width:45px" />
+        <div class="text-weight-light">{{token.sym}}</div>
         <q-tooltip content-class="bg-primary">
           <div>contract: {{token.contract}}</div>
           <div>precision: {{token.precision}}</div>
