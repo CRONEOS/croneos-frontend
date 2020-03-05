@@ -29,6 +29,11 @@
             "symbol": "JUNGLE",
             "account": "eosio.token",
             "logo": "./statics/images/tokens/jungle.png"
+        },
+        {
+            "symbol": "EOSDAC",
+            "account": "eosdactokens",
+            "logo": "./statics/images/tokens/jungle.png"
         }
     ]
 
