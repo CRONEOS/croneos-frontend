@@ -1,0 +1,16 @@
+{
+    "cron_contract": "cron.eos",
+
+    "tokens": [
+        {
+            "symbol": "EOS",
+            "account": "eosio.token",
+            "logo": "./statics/images/tokens/eos.png"
+        },
+        {
+            "symbol": "BOID",
+            "account": "boidcomtoken",
+            "logo": "./statics/images/tokens/jungle.png"
+        }
+    ]
+}

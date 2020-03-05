@@ -3,15 +3,15 @@ export async function initRoutine ({ dispatch }) {
     dispatch('fetchSettings');
     dispatch('fetchAllowedFeeTokens');
     dispatch('fetchCronjobsByScope');
-    dispatch('fetchBlacklist');
+
     
 }
 
-export async function fetchSettings ({ state, commit }) {
+export async function fetchSettings ({ state, rootGetters, commit }) {
     let res = await this._vm.$eos.rpc.get_table_rows({
         json: true,
-        code: state.config.cron_contract,
-        scope: state.config.cron_contract,
+        code: state.config[rootGetters["ual/getActiveNetwork"] ].cron_contract,
+        scope: state.config[rootGetters["ual/getActiveNetwork"] ].cron_contract,
         table: "settings",
         limit: 1
       });
@@ -27,12 +27,12 @@ export async function fetchSettings ({ state, commit }) {
       }
 }
 
-export async function fetchAllowedFeeTokens ({ state, commit }) {
+export async function fetchAllowedFeeTokens ({ state, rootGetters, commit }) {
 
   let res = await this._vm.$eos.rpc.get_table_rows({
       json: true,
-      code: state.config.cron_contract,
-      scope: state.config.cron_contract,
+      code: state.config[rootGetters["ual/getActiveNetwork"] ].cron_contract,
+      scope: state.config[rootGetters["ual/getActiveNetwork"] ].cron_contract,
       table: "gastokens",
       limit: -1
     });
@@ -56,11 +56,11 @@ export async function fetchAllowedFeeTokens ({ state, commit }) {
     }
 }
 
-export async function fetchCronjobsByScope ({ state, commit }) {
+export async function fetchCronjobsByScope ({ state, commit, rootGetters }) {
 
   let res = await this._vm.$eos.rpc.get_table_by_scope({
       json: true,
-      code: state.config.cron_contract,
+      code: state.config[rootGetters["ual/getActiveNetwork"] ].cron_contract,
       table: 'cronjobs',
       limit: -1
     });
@@ -73,20 +73,3 @@ export async function fetchCronjobsByScope ({ state, commit }) {
     }
 }
 
-export async function fetchBlacklist ({ state, commit }) {
-
-  let res = await this._vm.$eos.rpc.get_table_rows({
-    json: true,
-    code: state.config.cron_contract,
-    scope: state.config.cron_contract,
-    table: "blacklist",
-    limit: -1
-  });
-  if(res && res.rows.length){
-    console.log('fetched blacklist',res.rows);
-
-  }
-  else{
-      console.log('fetching blacklist failed');
-  }
-}

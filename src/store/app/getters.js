@@ -11,6 +11,11 @@ export function getConfig(state){
     return state.config;
 }
 
+export function getNetworkConfig(state, getters, rootState, rootGetters){
+
+    return state.config[rootGetters["ual/getActiveNetwork"] ];
+}
+
 export function getAllowedFeeTokens(state){
 
     if(state.allowedFeeTokens.length){
@@ -38,10 +43,10 @@ export function getAllowedFeeTokensSym(state, getters){
 
 }
 
-export function getNumberOfCronjobs(state){
+export function getNumberOfCronjobs(state, getters, rootState, rootGetters){
 
     if(state.cronjobsTableScopes.length){
-        let mainscope = state.cronjobsTableScopes.find(cs => cs.scope == state.config.cron_contract);
+        let mainscope = state.cronjobsTableScopes.find(cs => cs.scope == state.config[rootGetters["ual/getActiveNetwork"]].cron_contract);
 
         return mainscope ? mainscope.count/2 : 0;
     }

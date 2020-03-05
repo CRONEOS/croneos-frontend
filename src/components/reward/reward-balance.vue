@@ -37,7 +37,8 @@ export default {
       getSettings: "app/getSettings",
       getConfig: "app/getConfig",
       getIsTransacting: "ual/getIsTransacting",
-      getIconForSymbol: "app/getIconForSymbol"
+      getIconForSymbol: "app/getIconForSymbol",
+      getActiveNetwork: "ual/getActiveNetwork",
     })
 
     
@@ -58,7 +59,7 @@ export default {
       this.is_withdrawing=true;
       let actions = [
         {
-          account: this.getConfig.cron_contract,
+          account: this.getConfig[this.getActiveNetwork].cron_contract,
           name: "withdraw",
           data: {
             amount: this.parseReward().asset,

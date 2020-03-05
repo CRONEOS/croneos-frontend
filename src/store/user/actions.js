@@ -17,7 +17,7 @@ export async function fetchRewards ({ commit, rootState, rootGetters }, accountn
     //let account = rootGetters.getAccountName || 
     let res = await this._vm.$eos.rpc.get_table_rows({
         json: true,
-        code: rootState.app.config.cron_contract,
+        code: rootState.app.config[rootGetters["ual/getActiveNetwork"] ].cron_contract,
         scope: accountname,
         table: "rewards",
         limit: -1
@@ -43,7 +43,7 @@ export async function fetchDeposits ({ commit, rootState, rootGetters }, account
   //let account = rootGetters.getAccountName || 
   let res = await this._vm.$eos.rpc.get_table_rows({
       json: true,
-      code: rootState.app.config.cron_contract,
+      code: rootState.app.config[rootGetters["ual/getActiveNetwork"]].cron_contract,
       scope: accountname,
       table: "deposits",
       limit: -1

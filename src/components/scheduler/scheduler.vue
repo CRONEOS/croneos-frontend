@@ -47,7 +47,8 @@ export default {
   computed: {
     ...mapGetters({
       getAccountName: "ual/getAccountName",
-      getConfig: "app/getConfig"
+      getConfig: "app/getConfig",
+      getActiveNetwork: "ual/getActiveNetwork"
     })
   },
   methods:{
@@ -64,7 +65,7 @@ export default {
 
       let actions = [
         {
-          account: this.getConfig.cron_contract,
+          account: this.getConfig[this.getActiveNetwork].cron_contract,
           name: "schedule",
           data: {
             owner: this.getAccountName,

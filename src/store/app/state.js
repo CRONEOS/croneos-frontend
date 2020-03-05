@@ -2,7 +2,7 @@
 export default {
 
   CLOCK: 0,
-  config: require("../../statics/config/jungle.json"),
+  config: require("../../statics/config/config.json"),
   settings:false,
   allowedFeeTokens: false,
   cronjobsTableScopes: []

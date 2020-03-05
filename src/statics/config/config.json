@@ -1,0 +1,35 @@
+{
+
+    "jungle": {
+        "cron_contract": "croncron1111",
+        "endpoints": ["https://jungle2.cryptolions.io", "jungle.eosdac.io"]
+
+    },
+    "mainnet": {
+        "cron_contract": "cron.eos",
+        "endpoints": ["https://eos.greymass.com", "https://api.eosnewyork.io"]
+    },
+
+    "social":{
+        "github": "https://github.com/CRONEOS",
+        "telegram": "https://t.me/croneos"
+    },
+    "tokens":[
+        {
+            "symbol": "EOS",
+            "account": "eosio.token",
+            "logo": "./statics/images/tokens/eos.png"
+        },
+        {
+            "symbol": "BOID",
+            "account": "boidcomtoken",
+            "logo": "./statics/images/tokens/jungle.png"
+        },
+        {
+            "symbol": "JUNGLE",
+            "account": "eosio.token",
+            "logo": "./statics/images/tokens/jungle.png"
+        }
+    ]
+
+}

@@ -204,7 +204,9 @@ data () {
   computed: {
     ...mapGetters({
       getAccountName: "ual/getAccountName",
-      getConfig: "app/getConfig"
+      getConfig: "app/getConfig",
+      getActiveNetwork: "ual/getActiveNetwork",
+
 
     })
   },
@@ -212,7 +214,7 @@ data () {
     async cancelJob(id){
       let actions = [
         {
-          account: this.getConfig.cron_contract,
+          account: this.getConfig[this.getActiveNetwork].cron_contract,
           name: "cancel",
           data: {
             owner: this.getAccountName,

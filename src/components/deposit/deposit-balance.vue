@@ -53,7 +53,8 @@ export default {
     ...mapGetters({
       getAccountName: "ual/getAccountName",
       getConfig: "app/getConfig",
-      getIsTransacting: "ual/getIsTransacting"
+      getIsTransacting: "ual/getIsTransacting",
+      getActiveNetwork: "ual/getActiveNetwork",
     })
   },
   methods:{
@@ -66,7 +67,7 @@ export default {
           account: this.feetoken.contract,
           name: "transfer",
           data: {
-            to: this.getConfig.cron_contract,
+            to: this.getConfig[this.getActiveNetwork].cron_contract,
             from: this.getAccountName,
             quantity: `${Number(this.amount_to_add).toFixed(this.feetoken.precision) } ${this.feetoken.sym}`,
             memo:"deposit gas"
@@ -84,7 +85,7 @@ export default {
     
       let actions = [
         {
-          account: this.getConfig.cron_contract,
+          account: this.getConfig[this.getActiveNetwork].cron_contract,
           name: "refund",
           data: {
             amount: this.feetoken.balance,

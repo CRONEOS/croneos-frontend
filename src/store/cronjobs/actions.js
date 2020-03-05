@@ -1,9 +1,9 @@
 
-export async function fetchCronjobs ({ state, commit, rootState }) {
+export async function fetchCronjobs ({ state, commit, rootState, rootGetters}) {
     let res = await this._vm.$eos.rpc.get_table_rows({
         json: true,
-        code: rootState.app.config.cron_contract,
-        scope: rootState.app.config.cron_contract,
+        code: rootState.app.config[rootGetters["ual/getActiveNetwork"] ].cron_contract,
+        scope: rootState.app.config[rootGetters["ual/getActiveNetwork"] ].cron_contract,
         table: "cronjobs",
         limit: -1
         // table_key : '',

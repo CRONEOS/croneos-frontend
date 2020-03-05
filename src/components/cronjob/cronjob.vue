@@ -96,11 +96,19 @@
                     class="full-width"
                     :disabled="getIsTransacting"
                   >
+
+                    <q-icon v-if="cronjob.oracle_srcs.length" name="mdi-alpha-o-circle-outline" class="q-mr-sm">
+                        <q-tooltip content-class="bg-secondary">
+                          Oracle request
+                        </q-tooltip>
+                    </q-icon>
+
                     <q-icon v-if="cronjob.auth_bouncer" name="mdi-shield-key" class="q-mr-sm">
                         <q-tooltip content-class="bg-secondary">
                           Mining resticted by auth: {{cronjob.auth_bouncer}}
                         </q-tooltip>
                     </q-icon>
+                    
                     <span>mine</span>
                   </q-btn>
                   <q-btn
@@ -185,7 +193,8 @@ export default {
       getAccountName: "ual/getAccountName",
       getCLOCK: "app/getCLOCK",
       getIsTransacting: "ual/getIsTransacting",
-      getConfig: "app/getConfig"
+      getConfig: "app/getConfig",
+      getActiveNetwork: "ual/getActiveNetwork"
     }),
     getTimeStats() {
       let stats = {
@@ -230,7 +239,7 @@ export default {
 
       let actions = [
         {
-          account: this.getConfig.cron_contract,
+          account: this.getConfig[this.getActiveNetwork].cron_contract,
           name: "exec",
           data: {
             executer: this.getAccountName,

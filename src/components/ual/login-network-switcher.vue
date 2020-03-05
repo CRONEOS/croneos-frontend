@@ -66,24 +66,25 @@ export default {
     return {
       selected_network: null,
       networks: [
+
+        {
+          label: "Mainnet",
+          key: "mainnet",
+          icon: "img:statics/images/networks/mainnet.png",
+          msg: "active: beta version"
+        },
         {
           label: "Jungle",
           key: "jungle",
           icon: "img:statics/images/networks/jungle.png",
           msg: "active: beta version"
-        },
-        {
-          label: "Mainnet",
-          key: "mainnet",
-          icon: "img:statics/images/networks/mainnet.png",
-          msg: "coming soon"
-        },
-        {
-          label: "Kylin",
-          key:"kylin",
-          icon: "img:statics/images/networks/kylin.png",
-          msg: "coming soon"
-        },
+        }
+        // {
+        //   label: "Kylin",
+        //   key:"kylin",
+        //   icon: "img:statics/images/networks/kylin.png",
+        //   msg: "coming soon"
+        // },
 
       ]
     };
@@ -94,6 +95,7 @@ export default {
       getShouldRenderLoginModal: "ual/getShouldRenderLoginModal",
       getActiveNetwork: "ual/getActiveNetwork",
       getSESSION: "ual/getSESSION",
+      getConfig: "app/getConfig"
     })
   },
   methods:{
@@ -111,7 +113,10 @@ export default {
       if(!!this.getAccountName){
         await this.$store.dispatch('ual/logout');
       };
+      
       this.$store.commit("ual/setActiveNetwork", network_key);
+      this.$eos.setEndpoints(this.getConfig[this.getActiveNetwork].endpoints);
+      
       await this.$store.dispatch("ual/initUAL");
       this.$store.dispatch('ual/renderLoginModal');
     }

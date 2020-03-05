@@ -42,6 +42,7 @@ export default {
     ...mapGetters({
       getAccountName: "ual/getAccountName",
       getConfig: "app/getConfig",
+      getActiveNetwork: "ual/getActiveNetwork"
 
 
     })
@@ -53,8 +54,8 @@ export default {
       this.jobs_are_loading=true;
       let res  = await this.$eos.rpc.get_table_rows({
         json: true,
-        code: this.getConfig.cron_contract,
-        scope: this.getConfig.cron_contract,
+        code: this.getConfig[this.getActiveNetwork].cron_contract,
+        scope: this.getConfig[this.getActiveNetwork].cron_contract,
         table: "cronjobs",
         
         // table_key : '',
