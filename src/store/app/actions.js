@@ -73,3 +73,21 @@ export async function fetchCronjobsByScope ({ state, commit, rootGetters }) {
     }
 }
 
+export async function fetchContractState ({ state, commit, rootGetters }) {
+
+  let res = await this._vm.$eos.rpc.get_table_rows({
+      json: true,
+      code: state.config[rootGetters["ual/getActiveNetwork"] ].cron_contract,
+      scope: state.config[rootGetters["ual/getActiveNetwork"] ].cron_contract,
+      table: "state",
+      limit: 1
+    });
+    if(res && res.rows.length){
+      console.log('fetched contract state',res);
+      commit('setContractState', res.rows[0]);
+    }
+    else{
+        console.log('fetching contract state failed');
+    }
+}
+

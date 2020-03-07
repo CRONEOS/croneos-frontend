@@ -14,5 +14,10 @@ export function setCronjobsTableScopes(state, payload){
     state.cronjobsTableScopes = payload;
 }
 
+export function setContractState(state, payload){
+    state.contractState = payload;
+}
+
+
 
 

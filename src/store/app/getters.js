@@ -59,6 +59,10 @@ export function getIconForSymbol(state) {
         let token_icon = token_from_config ? token_from_config.logo : './statics/images/tokens/default.png';
         return token_icon;
     };
-  }
+}
+
+export function getContractState(state){
+    return state.contractState;
+}
 
 

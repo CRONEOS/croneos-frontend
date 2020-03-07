@@ -79,8 +79,8 @@
                 <div >
                   <!-- <span class="text-caption q-pr-xs">CRON</span> -->
                   <div class="row items-center q-pa-xs">
-                    <q-icon name="img:statics/vectors/cron-symbol.svg" class="q-mr-xs" style="margin-top:-2px"/>
-                    <div>1111 CRON</div>
+                    <!-- <q-icon name="img:statics/vectors/cron-symbol.svg" class="q-mr-xs" style="margin-top:-2px"/>
+                    <div>1111 CRON</div> -->
                   </div>
                 </div>
 

@@ -5,5 +5,6 @@ export default {
   config: require("../../statics/config/config.json"),
   settings:false,
   allowedFeeTokens: false,
-  cronjobsTableScopes: []
+  cronjobsTableScopes: [],
+  contractState: false
 }

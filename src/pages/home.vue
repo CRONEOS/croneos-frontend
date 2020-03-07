@@ -22,18 +22,26 @@
           />
         </div>
       </q-parallax>
-      <div
-        class="absolute-bottom-right text-caption q-pa-xs q-ma-xs bg-secondary cursor-pointer"
-        style="opacity:0.9"
-      >
-        <span>#cronjobs </span
-        ><span
-          ><b>{{ getNumberOfCronjobs }}</b></span
-        >
-        <q-tooltip content-class="bg-secondary" :delay="500">
-          There are {{ getNumberOfCronjobs }} jobs scheduled.
-        </q-tooltip>
+      <div class="row absolute-bottom-right">
+        <div class=" text-caption q-pa-xs q-ma-xs bg-primary" style="opacity:0.9">
+          <span>Active </span><span>{{ getNumberOfCronjobs || 0 }}</span>
+        </div>
+        <div class=" text-caption q-pa-xs q-ma-xs bg-secondary" style="opacity:0.9">
+          <span>Total </span><span>{{getContractState.schedule_count}}</span>
+        </div>
+        <div class=" text-caption q-pa-xs q-ma-xs bg-secondary" style="opacity:0.9">
+          <span>Executed </span><span>{{getContractState.exec_count}}</span>
+        </div>
+        <div class=" text-caption q-pa-xs q-ma-xs bg-secondary" style="opacity:0.9">
+          <span>Cancelled </span><span>{{getContractState.cancel_count}}</span>
+        </div>
+        <div class=" text-caption q-pa-xs q-ma-xs bg-secondary" style="opacity:0.9">
+          <span>Expired </span><span>{{getContractState.expired_count}}</span>
+        </div>
+
+
       </div>
+
     </div>
 
     <div class="bg-secondary q-pb-xl">
@@ -205,11 +213,17 @@ export default {
   computed: {
     ...mapGetters({
       getAccountName: "ual/getAccountName",
-      getNumberOfCronjobs: "app/getNumberOfCronjobs"
+      getNumberOfCronjobs: "app/getNumberOfCronjobs",
+      getContractState: "app/getContractState"
     })
   },
   methods: {
-    dologin() {}
+    fetchContractState() {
+      this.$store.dispatch('app/fetchContractState');
+    }
+  },
+  mounted(){
+    this.fetchContractState();
   }
 };
 </script>
