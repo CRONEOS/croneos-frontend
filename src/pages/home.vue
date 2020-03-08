@@ -24,19 +24,34 @@
       </q-parallax>
       <div class="row absolute-bottom-right">
         <div class=" text-caption q-pa-xs q-ma-xs bg-primary" style="opacity:0.9">
-          <span>Active </span><span>{{ getNumberOfCronjobs || 0 }}</span>
+          <span>Active </span>
+          <span v-if="getNumberOfCronjobs">{{ getNumberOfCronjobs || 0 }}</span>
+          <q-spinner v-else />
+          <q-tooltip :delay="500" content-class="bg-primary">Jobs waiting to be executed</q-tooltip>
         </div>
         <div class=" text-caption q-pa-xs q-ma-xs bg-secondary" style="opacity:0.9">
-          <span>Total </span><span>{{getContractState.schedule_count}}</span>
+          <span>Total </span>
+          <span v-if="getContractState">{{getContractState.schedule_count}}</span>
+          <q-spinner v-else />
+          <q-tooltip :delay="500" content-class="bg-primary">Total amount of received jobs</q-tooltip>
         </div>
         <div class=" text-caption q-pa-xs q-ma-xs bg-secondary" style="opacity:0.9">
-          <span>Executed </span><span>{{getContractState.exec_count}}</span>
+          <span>Executed </span>
+          <span v-if="getContractState">{{getContractState.exec_count}}</span>
+          <q-spinner v-else />
+          <q-tooltip :delay="500" content-class="bg-primary">Number of executed jobs</q-tooltip>
         </div>
         <div class=" text-caption q-pa-xs q-ma-xs bg-secondary" style="opacity:0.9">
-          <span>Cancelled </span><span>{{getContractState.cancel_count}}</span>
+          <span>Cancelled </span>
+          <span v-if="getContractState">{{getContractState.cancel_count}}</span>
+          <q-spinner v-else />
+          <q-tooltip :delay="500" content-class="bg-primary">Number of cancelled jobs</q-tooltip>
         </div>
         <div class=" text-caption q-pa-xs q-ma-xs bg-secondary" style="opacity:0.9">
-          <span>Expired </span><span>{{getContractState.expired_count}}</span>
+          <span>Expired </span>
+          <span v-if="getContractState">{{getContractState.expired_count}}</span>
+          <q-spinner v-else />
+          <q-tooltip :delay="500" content-class="bg-primary">Number of expired jobs</q-tooltip>
         </div>
 
 
