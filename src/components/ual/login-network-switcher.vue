@@ -115,7 +115,8 @@ export default {
       };
       
       this.$store.commit("ual/setActiveNetwork", network_key);
-      this.$eos.setEndpoints(this.getConfig[this.getActiveNetwork].endpoints);
+      this.$eos = this.$eos.switch_network(this.getConfig[this.getActiveNetwork].endpoints);
+      // this.$eos.setEndpoints(this.getConfig[this.getActiveNetwork].endpoints);
       
       await this.$store.dispatch("ual/initUAL");
       this.$store.dispatch('ual/renderLoginModal');

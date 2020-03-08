@@ -130,7 +130,7 @@ export default {
       const contract = await this.$eos.getContract(this.cronjob.actions[0].account);
       let r = await this.$eos.Serialize.deserializeAction(contract, this.cronjob.actions[0].account, this.cronjob.actions[0].name, this.cronjob.actions[0].authorization, this.cronjob.actions[0].data );
       console.log( JSON.stringify(r,null,2));
-      ; 
+  
 
     }
   }
