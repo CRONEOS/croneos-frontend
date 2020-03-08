@@ -1,17 +1,18 @@
 <template>
 <div>
-      <q-list :dark="dark" v-if="getRewards" >
+      <q-list :dark="dark" v-if="getRewards && getAccountName" >
         <q-item-label header>MINING REWARDS ({{getRewards.length}})</q-item-label>
         <q-scroll-area :visible="true" :thumb-style="thumbStyle" style="height: 106px; width:100%">
           <reward-balance :reward="reward.adj_p_balance" v-for="(reward,i) in getRewards" :key="`reward${i}`" />
         </q-scroll-area>
       </q-list>
     
-    <q-list :dark="dark" v-else dense>
+    <q-list :dark="dark"  dense v-else>
       <q-item-label header>MINING REWARDS</q-item-label>
       <q-item>
         <q-item-section>
-          <q-item-label caption>Please log in</q-item-label>
+          <q-item-label v-if="!getAccountName" caption>Please log in</q-item-label>
+          <q-item-label v-else caption>No rewards</q-item-label>
         </q-item-section>   
       </q-item>
     </q-list>
@@ -31,7 +32,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      getRewards: "user/getRewards"
+      getRewards: "user/getRewards",
+      getAccountName: "ual/getAccountName"
 
     })
   },

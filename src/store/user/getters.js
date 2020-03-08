@@ -36,7 +36,7 @@ export function getCPUStats(state) {
     res.parsed.available = parseMicroSeconds(cpu.available);
     res.parsed.used = parseMicroSeconds(cpu.used);
     res.parsed.max = parseMicroSeconds(cpu.max);
-    res.self_delegated_cpu = state.account.self_delegated_bandwidth.cpu_weight;
+    res.self_delegated_cpu = state.account.self_delegated_bandwidth != null ? state.account.self_delegated_bandwidth.cpu_weight : 0;
     res.total_delegated_cpu = state.account.total_resources.cpu_weight;
     return res;
   }
@@ -51,7 +51,7 @@ export function getNETStats(state) {
     res.parsed.available = parseBytes(net.available);
     res.parsed.used = parseBytes(net.used);
     res.parsed.max = parseBytes(net.max);
-    res.self_delegated_net = state.account.self_delegated_bandwidth.net_weight;
+    res.self_delegated_net = state.account.self_delegated_bandwidth != null ? state.account.self_delegated_bandwidth.net_weight : 0;
     res.total_delegated_net = state.account.total_resources.net_weight;
     return res;
   }

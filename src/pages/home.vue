@@ -25,14 +25,14 @@
       <div class="row absolute-bottom-right">
 
         <div class=" text-caption q-pa-xs q-ma-xs bg-secondary" style="opacity:0.9">
-          <span>Total </span>
+          <span>Total</span>
           <span v-if="getContractState" class="text-weight-bold">{{getContractState.schedule_count}}</span>
           <q-spinner v-else />
           <q-tooltip :delay="500" content-class="bg-primary">Total number of received jobs</q-tooltip>
         </div>
         <div class=" text-caption q-pa-xs q-ma-xs bg-primary" style="opacity:0.9">
           <span>Active </span>
-          <span v-if="getNumberOfCronjobs" class="text-weight-bold">{{ getNumberOfCronjobs || 0 }}</span>
+          <span v-if="getNumberOfCronjobs!=''" class="text-weight-bold">{{ getNumberOfCronjobs || 0 }}</span>
           <q-spinner v-else />
           <q-tooltip :delay="500" content-class="bg-primary">Jobs waiting to be executed</q-tooltip>
         </div>
