@@ -54,15 +54,12 @@
           CRONEOS as an alternative solution for enabling dapps to schedule
           future work. Smart contract developers can submit their scheduled
           tasks to an on chain pool. Miners can then execute these jobs. To
-          align incentives we introduce an optional gas fee (multiple tokens
-          allowed). The executer of the scheduled action will receive a (to be
-          determined) portion of the fee as reward (see more about gas-reward
-          model and relationship with CRON token).
+          align incentives we introduce an optional gas fee (see gas tokens). The executer of the scheduled action will receive a (to be
+          determined) portion of the fee as reward.
         </p>
 
         <p>
-          The project is currently in development (live on jungle). You want to
-          help? Contact via Github.
+          The project is currently available as beta release (mainnet, jungle). Croneos will be managed by a DAC in the not too distant future.
         </p>
         <!-- <p>Croneos is looking for contributers (design infographics, website, community management, ...).</p> -->
       </div>
@@ -75,10 +72,9 @@
           The execution of the scheduled jobs don't depend on a single entity.
           Anyone can execute jobs from the pool. When using croneos for your
           scheduled tasks you don't need to rely on scripts or non native
-          services that can fail. Croneos is a base layer solution for scheduled
+          services that can fail or yield unwanted constrains. Croneos is a base layer solution for scheduled
           jobs and lives entirly on the main chain.
         </p>
-        <p>A DAC will be created to manage the croneos contract.</p>
       </div>
     </div>
 
@@ -92,7 +88,7 @@
                 Smart contract devs can integrate croneos by including a single
                 header file (c++) to make it easy to interact with the croneos
                 smart contract. The api to schedule jobs is very similar to
-                normal inline transactions. You'll need to configure the execution time and add an optional gas fee.
+                normal inline transactions. You'll need to configure the execution time and add an optional gas fee. Your jobs will be added to an on-chain pool that is watched by miners.
               </p>
               <router-link to="/docs/getting-started" tag="a" class="text-link">
                 Get started
@@ -121,8 +117,7 @@
           <p>
             Although paying gas is optional we believe it will increase the
             probability of on time execution. The executer of your scheduled
-            action will be rewarded with % (to be determined) of the gas and
-            additional CRON tokens. Currently the CRONEOS smart contract only
+            action(s) will be rewarded with % (to be determined) of the gas. Currently the CRONEOS smart contract
             accepts the following gas tokens:
           </p>
           <gas-tokens />
