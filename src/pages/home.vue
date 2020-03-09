@@ -22,19 +22,21 @@
           />
         </div>
       </q-parallax>
-      <div class="row absolute-bottom-right">
-
+      <div class="row items-center absolute-bottom-right">
+        <div class=" text-caption q-pa-xs q-ma-xs" style="opacity:0.9">
+          <q-btn icon="refresh" color="secondary" round dense size="sm" @click="reloadStats" :loading="stats_loading"/>
+        </div>
         <div class=" text-caption q-pa-xs q-ma-xs bg-secondary" style="opacity:0.9">
-          <span>Total</span>
+          <span>Total </span>
           <span v-if="getContractState" class="text-weight-bold">{{getContractState.schedule_count}}</span>
           <q-spinner v-else />
           <q-tooltip :delay="500" content-class="bg-primary">Total number of received jobs</q-tooltip>
         </div>
         <div class=" text-caption q-pa-xs q-ma-xs bg-primary" style="opacity:0.9">
           <span>Active </span>
-          <span v-if="getNumberOfCronjobs!=''" class="text-weight-bold">{{ getNumberOfCronjobs || 0 }}</span>
+          <span v-if="getContractState" class="text-weight-bold">{{ getContractState.schedule_count - getContractState.exec_count - getContractState.cancel_count -getContractState.expired_count}}</span>
           <q-spinner v-else />
-          <q-tooltip :delay="500" content-class="bg-primary">Jobs waiting to be executed</q-tooltip>
+          <q-tooltip :delay="500" content-class="bg-primary">Jobs waiting to be executed ({{getNumberOfCronjobs}})</q-tooltip>
         </div>
         <div class=" text-caption q-pa-xs q-ma-xs bg-secondary" style="opacity:0.9">
           <span>Executed </span>
@@ -218,7 +220,8 @@ export default {
   data() {
     return {
       showYouTubeVideo: false,
-      video_is_loaded: false
+      video_is_loaded: false,
+      stats_loading: false
     };
   },
   computed: {
@@ -229,6 +232,14 @@ export default {
     })
   },
   methods: {
+    async reloadStats(){
+      this.stats_loading = true;
+      await this.fetchContractState();
+      await new Promise((resolve) => {
+          setTimeout(resolve, 300);
+        });
+      this.stats_loading = false;
+    },
     fetchContractState() {
       this.$store.dispatch('app/fetchContractState');
     }
