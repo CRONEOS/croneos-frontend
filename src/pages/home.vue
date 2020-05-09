@@ -80,6 +80,7 @@
           The project is currently available as beta release (mainnet, jungle). Croneos will be managed by a DAC in the not too distant future.
         </p>
         <!-- <p>Croneos is looking for contributers (design infographics, website, community management, ...).</p> -->
+
       </div>
     </div>
 

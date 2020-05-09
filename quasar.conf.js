@@ -88,7 +88,8 @@ module.exports = function (ctx) {
         'QSeparator',
         'QScrollArea',
         'QExpansionItem',
-        'QImg'
+        'QImg',
+        'QVirtualScroll'
 
       ],
 

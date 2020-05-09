@@ -48,6 +48,36 @@
       />
     </transition-group>
     <div v-else>No jobs</div>
+
+
+  <!-- <q-virtual-scroll
+    style="height: 500px;"
+    :items="getCronjobs"
+    v-if="getCronjobs.length"
+    separator
+  >
+    <template v-slot="{ item, index }">
+
+      <cronjob
+        class="q-mb-sm"
+        :key="item.id"
+        :cronjob="item"
+        @executed="removeExecutedJob(index)"
+      />
+      <!-- <q-item
+        :key="index"
+        dense
+      >
+        <q-item-section>
+          <q-item-label>
+            #{{item.id}}
+          </q-item-label>
+        </q-item-section>
+      </q-item> -->
+    <!-- </template>
+  </q-virtual-scroll> -->
+
+
   </q-page>
 </template>
 

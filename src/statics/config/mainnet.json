@@ -11,6 +11,11 @@
             "symbol": "BOID",
             "account": "boidcomtoken",
             "logo": "./statics/images/tokens/jungle.png"
+        },
+        {
+            "symbol": "VIG",
+            "account": "vig111111111",
+            "logo": "./statics/images/tokens/vigor.png"
         }
     ]
 }
