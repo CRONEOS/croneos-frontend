@@ -51,10 +51,10 @@
           <q-tooltip :delay="500" content-class="bg-primary">Number of jobs cancelled by it's the owner</q-tooltip>
         </div>
         <div class=" text-caption q-pa-xs q-ma-xs bg-secondary" style="opacity:0.9">
-          <span>Expired </span>
+          <span>Asserted/Expired </span>
           <span v-if="getContractState" class="text-weight-bold">{{getContractState.expired_count}}</span>
           <q-spinner v-else />
-          <q-tooltip :delay="500" content-class="bg-primary">Number of expired jobs</q-tooltip>
+          <q-tooltip :delay="500" content-class="bg-primary">Number of asserted or expired jobs</q-tooltip>
         </div>
 
 
