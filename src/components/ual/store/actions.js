@@ -5,6 +5,7 @@ import { Scatter } from 'ual-scatter';
 import { Ledger } from 'ual-ledger';
 import { Lynx } from 'ual-lynx';
 import { TokenPocket } from 'ual-token-pocket';
+import { Anchor } from 'ual-anchor'
 import { EOSIOAuth } from 'ual-eosio-reference-authenticator';
 
 export async function initUAL({ state, commit, dispatch, getters }, network) {
@@ -16,7 +17,8 @@ export async function initUAL({ state, commit, dispatch, getters }, network) {
     new Ledger(chains),
     new Lynx(chains, { appName: appName }),
     new TokenPocket(chains),
-    new EOSIOAuth(chains, { appName, protocol: 'eosio' })
+    new EOSIOAuth(chains, { appName, protocol: 'eosio' }),
+    new Anchor(chains, { appName: appName })
   ];
   let ual = new UAL(
     chains,
