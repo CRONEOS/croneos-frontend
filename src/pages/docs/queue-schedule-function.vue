@@ -6,6 +6,9 @@
     <p>When you enabled the queue in the croneos header file there will be a queue table added to your contract. This table can be populated with the queue::schedule method. The croneosqueue table will hold your scheduled actions. </p>
     <code-block :code="schedule_code" :copy="false" style="max-width:800px"/>
 
+    <p>The scheduled actions will be executed by the miners. To enable this you need to expose a "tick" action in your contract. Miners will call this tick action to execute the jobs in the queue. The tick action can be called by anyone, so it's not limited to croneos miners.</p>
+    <code-block :code="tick_action" :copy="false" style="max-width:800px"/>
+
     <!-- <div class="info-box q-mt-md">A tag is optional. You can omit this property while configuring your croneos::job instance.</div> -->
 
 
@@ -40,6 +43,12 @@ myqueue.schedule(
   delay_sec, //delay_sec
   expiration_sec //expiration_sec
 );`,
+
+  tick_action:`
+ACTION test::tick(){
+  croneos::queue myqueue(get_self() );
+  myqueue.exec();
+}`
     };
   },
   computed: {
