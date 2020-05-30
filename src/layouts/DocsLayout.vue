@@ -38,7 +38,17 @@
           <q-item-label>Get Started</q-item-label>
         </q-item-section>
       </q-item>
+      <q-expansion-item expand-separator label="croneos::queue" group="docs_menu">
+        <q-list>
 
+          <q-item clickable to="/docs/queue-schedule-function" exact>
+            <q-item-section>
+              <q-item-label>Schedule Function</q-item-label>
+            </q-item-section>
+          </q-item>
+
+        </q-list>
+      </q-expansion-item>
       <q-expansion-item expand-separator label="croneos::job" group="docs_menu">
         <q-list>
 
@@ -86,6 +96,8 @@
 
         </q-list>
       </q-expansion-item>
+
+
 
       <q-expansion-item expand-separator label="Mining" group="docs_menu">
         <q-item clickable to="/docs/mining-bot" exact>

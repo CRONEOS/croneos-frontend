@@ -11,3 +11,7 @@ export function setAccount (state, payload) {
     state.account = payload
 }
 
+export function setCronBalance(state, payload){
+    state.cronBalance = payload;
+}
+

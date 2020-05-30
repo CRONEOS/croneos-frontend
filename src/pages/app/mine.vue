@@ -1,5 +1,6 @@
 <template>
   <q-page padding class="">
+    
 
 <transition enter-active-class="animated fadeInDown" leave-active-class="animated fadeOutUp"  mode="in-out" tag="div">
 
@@ -30,7 +31,7 @@
  
     
     <h5 class="row items-center">
-      <div>Mineables</div>
+      <div>Mineables <span class="text-caption">(click to load jobs {{getNumberOfCronjobs}})</span></div>
       <q-btn icon="refresh" :loading="jobs_are_loading" flat dense color="primary" @click="$store.dispatch('cronjobs/fetchCronjobs');" class="q-ml-md"/>
     </h5>
     <transition-group
@@ -106,7 +107,8 @@ export default {
   computed: {
     ...mapGetters({
       getCLOCK: "app/getCLOCK",
-      getCronjobs: "cronjobs/getCronjobs"
+      getCronjobs: "cronjobs/getCronjobs",
+      getNumberOfCronjobs: "app/getNumberOfCronjobs",
      
     })
   },
@@ -124,7 +126,7 @@ export default {
     }
   },
   mounted(){
-    this.loadJobs();
+    //this.loadJobs();
     if(!this.CLOCK_TIMER || !this.getCLOCK){
       this.$store.commit("app/setCLOCK", new Date().getTime());
       this.CLOCK_TIMER = setInterval(() => {

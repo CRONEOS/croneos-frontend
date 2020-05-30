@@ -2,12 +2,14 @@
 
     "jungle": {
         "cron_contract": "croncron1111",
+        "token_contract": "crontoken123",
         "endpoints": ["https://jungle2.cryptolions.io", "jungle.eosdac.io"]
 
     },
     "mainnet": {
         "cron_contract": "cron.eos",
-        "endpoints": ["https://eos.greymass.com", "https://api.eosnewyork.io"]
+        "token_contract": "token.cron",
+        "endpoints": ["https://eos.greymass.com", "https://jungle.eossweden.org", "https://jungle2.cryptolions.io", "https://jungle.eosdac.io"]
     },
 
     "social":{

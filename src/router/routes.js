@@ -43,7 +43,7 @@ const routes = [
       { path: 'description', component: () => import('pages/docs/description.vue') },
       { path: 'schedule-function', component: () => import('pages/docs/schedule-function.vue') },
       { path: 'mining-bot', component: () => import('pages/docs/mining-bot.vue') },
-
+      { path: 'queue-schedule-function', component: () => import('pages/docs/queue-schedule-function.vue') },
     ]
   },
   

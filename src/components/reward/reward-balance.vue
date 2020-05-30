@@ -39,6 +39,7 @@ export default {
       getIsTransacting: "ual/getIsTransacting",
       getIconForSymbol: "app/getIconForSymbol",
       getActiveNetwork: "ual/getActiveNetwork",
+      getCronBalance: "user/getCronBalance"
     })
 
     
@@ -57,16 +58,32 @@ export default {
     },
     async withdraw(){
       this.is_withdrawing=true;
+      let amount = this.parseReward().asset;
       let actions = [
         {
           account: this.getConfig[this.getActiveNetwork].cron_contract,
           name: "withdraw",
           data: {
-            amount: this.parseReward().asset,
+            amount: amount,
             miner: this.getAccountName
           }
         }
       ];
+      if(amount.includes("CRON") && !this.getCronBalance ){
+        //todo check if has account;
+        actions.unshift({
+          account: this.getConfig[this.getActiveNetwork].token_contract,
+          name: "open",
+          data: {
+            owner: this.getAccountName,
+            symbol: "4,CRON",
+            ram_payer: this.getAccountName
+          }
+        });
+        
+      }
+
+
       let res = await this.$store.dispatch("ual/transact", { actions: actions, disable_signing_overlay: true });
       if(res){
         setTimeout(()=>{this.$store.dispatch("user/fetchRewards", this.getAccountName)}, 1000);

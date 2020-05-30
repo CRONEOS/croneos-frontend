@@ -1,6 +1,6 @@
 <template>
   <q-page padding class="constrain-page-width bg-white text-black" style="padding-bottom:300px">
-
+    <div class="warning-box">There is a new (backwards compatible) interface available to interact with the croneos contract. Refer to croneos::queue, documentations will be updated.</div>
     <!-- content -->
     <h5 class="row justify-between items-center">
       Getting Started with Croneos

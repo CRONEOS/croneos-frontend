@@ -56,3 +56,7 @@ export function getNETStats(state) {
     return res;
   }
 }
+
+export function getCronBalance(state, payload){
+  return state.cronBalance;
+}

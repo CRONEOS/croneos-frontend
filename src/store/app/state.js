@@ -6,5 +6,6 @@ export default {
   settings:false,
   allowedFeeTokens: false,
   cronjobsTableScopes: [],
-  contractState: false
+  contractState: false,
+
 }
