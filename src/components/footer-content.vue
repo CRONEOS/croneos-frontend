@@ -26,7 +26,10 @@
     <div :class="colsetup">
       <div class="q-pa-sm">
         <div class="text-h6 text-weight-light q-mb-md">Sponsors & Partners</div>
-        <img  src="statics/vectors/eosdac-rec-white.svg" style="height:36px" class="cursor-pointer" @click="openURL('https://eosdac.io')">
+        <div class="row items-center">
+          <img  src="statics/vectors/eosdac-rec-white.svg" style="height:36px" class="cursor-pointer q-ma-xs" @click="openURL('https://eosdac.io')">
+          <img  src="statics/images/eosusa_logo.png" style="height:36px" class="cursor-pointer q-ma-xs" @click="openURL('https://www.eosusa.news/')">
+        </div>
       </div>
     </div>
    

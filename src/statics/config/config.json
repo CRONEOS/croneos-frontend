@@ -41,6 +41,11 @@
             "symbol": "VIG",
             "account": "vig111111111",
             "logo": "./statics/images/tokens/vigor.png"
+        },
+        {
+            "symbol": "CRON",
+            "account": "token.cron",
+            "logo": "./statics/images/tokens/cron.png"
         }
     ]
 
