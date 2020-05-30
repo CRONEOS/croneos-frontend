@@ -45,8 +45,8 @@ myqueue.schedule(
 );`,
 
   tick_action:`
-ACTION test::tick(){
-  croneos::queue myqueue(get_self() );
+ACTION yourcontract::tick(){
+  croneos::queue myqueue(get_self());
   myqueue.exec();
 }`
     };
