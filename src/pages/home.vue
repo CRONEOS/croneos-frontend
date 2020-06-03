@@ -2,7 +2,7 @@
   <q-page class=" full-height">
     <!-- <div class="diagonal"></div> -->
     <div class="header_box relative-position">
-      <q-parallax src="./statics/images/bg.jpg" :height="450">
+      <q-parallax src="statics/images/bg.jpg" :height="450">
         <div class="text-center text-primary" style="">
           <div
             style="background:#272822F2"
