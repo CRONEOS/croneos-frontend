@@ -67,13 +67,12 @@
         <h5 class="text-center text-weight-light">Background</h5>
 
         <p>
-          Delayed transactions will be deprecated (EOSIO version xx) due to
+          Delayed transactions are deprecated (EOSIO version 2) due to
           multiple <a href="https://github.com/EOSIO/spec-repo/blob/master/esr_deprecate_deferred.md" class="text-link" target="_blank">issues</a> it generates. We propose
           CRONEOS as an alternative solution for enabling dapps to schedule
           future work. Smart contract developers can submit their scheduled
           tasks to an on chain pool. Miners can then execute these jobs. To
-          align incentives we introduce an optional gas fee (see gas tokens). The executer of the scheduled action will receive a (to be
-          determined) portion of the fee as reward.
+          align incentives we introduce an optional gas fee (see gas tokens). The gas fee will be used to reward the executer of your job.
         </p>
 
         <p>
@@ -92,7 +91,7 @@
           Anyone can execute jobs from the pool. When using croneos for your
           scheduled tasks you don't need to rely on scripts or non native
           services that can fail or yield unwanted constrains. Croneos is a base layer solution for scheduled
-          jobs and lives entirly on the main chain.
+          jobs and lives entirly on the main chain. Your jobs can also be executed directly on your smart contract. Integrating croneos will not make the inner workings of your contract dependent of the service.
         </p>
       </div>
     </div>
@@ -107,7 +106,7 @@
                 Smart contract devs can integrate croneos by including a single
                 header file (c++) to make it easy to interact with the croneos
                 smart contract. The api to schedule jobs is very similar to
-                normal inline transactions. You'll need to configure the execution time and add an optional gas fee. Your jobs will be added to an on-chain pool that is watched by miners.
+                normal inline transactions. You'll need to configure the execution time and add an optional gas fee. Your contract will be extended with a croneos queue table which hold your scheduled jobs. Croneos miners will be notified to executed these jobs right on time. The gas from jobs that are executed without croneos (for example by your own server script or even a button in your UI) will be returned to your deposits.
               </p>
               <router-link to="/docs/getting-started" tag="a" class="text-link">
                 Get started
@@ -119,7 +118,7 @@
               <h5 class="text-center text-weight-light">Miners</h5>
               <p>
                 Monetize your excess CPU by mining scheduled jobs. As a miner
-                you earn rewards for each successful execution. We encourage automated mining bots.
+                you earn gas rewards for each successful execution. On top of the gas miners also receive a certain amount of CRON tokens. The amount received for each job is dependent of the execution punctuality. 
               </p>
             </div>
           </div>
@@ -149,8 +148,12 @@
     </div>
 
     <div class="q-pa-sm text-white">
+    <div class="text-center q-mt-md" style="margin-bottom: -35px">
+      <q-img src="statics/images/tokens/cron.png" contain style="height:60px; width:60px"/>
+    </div>
       <h5 class="text-center text-weight-light">CRON Token</h5>
     </div>
+
     <p class="text-center">More info about the CRON token soon...</p>
     <!-- <div class="row q-col-gutter-lg text-white q-pa-sm">
       <div class="col-xs-12 col-sm-6 col-md-3">
