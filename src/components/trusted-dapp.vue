@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="dapp.approved==1">
     <q-card style="width:200px" class="bg-primary-light">
       <q-img :src="dapp.logo"  fit style="height:220px"/>
         <!-- <q-item-section>
