@@ -3,6 +3,7 @@ export async function initRoutine ({ dispatch }) {
     dispatch('fetchSettings');
     dispatch('fetchAllowedFeeTokens');
     dispatch('fetchCronjobsByScope');
+    dispatch('fetchTrustedDapps');
 
     
 }
@@ -88,6 +89,24 @@ export async function fetchContractState ({ state, commit, rootGetters }) {
     }
     else{
         console.log('fetching contract state failed');
+    }
+}
+
+export async function fetchTrustedDapps ({ state, commit, rootGetters }) {
+
+  let res = await this._vm.$eos.rpc.get_table_rows({
+      json: true,
+      code: state.config[rootGetters["ual/getActiveNetwork"] ].cron_contract,
+      scope: state.config[rootGetters["ual/getActiveNetwork"] ].cron_contract,
+      table: "trusteddapps",
+      limit: -1
+    });
+    if(res && res.rows.length){
+      console.log('fetched trusteddapps',res.rows);
+      commit('setTrustedDapps', res.rows);
+    }
+    else{
+        console.log('fetching trusteddapps failed');
     }
 }
 

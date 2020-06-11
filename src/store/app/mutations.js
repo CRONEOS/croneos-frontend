@@ -18,6 +18,10 @@ export function setContractState(state, payload){
     state.contractState = payload;
 }
 
+export function setTrustedDapps(state, payload){
+    state.trustedDapps = payload;
+}
+
 
 
 

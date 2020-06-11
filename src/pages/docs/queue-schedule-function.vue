@@ -39,7 +39,7 @@ myqueue.schedule(
   //optional tag to identify the scheduled action in the queue
   name("dummytag"),
   //gas fee
-  extended_asset(asset(1, symbol(symbol_code("EOS"), 4) ), name("eosio.token") ),
+  asset(1, symbol(symbol_code("EOS"), 4) ),
   delay_sec, //delay_sec
   expiration_sec //expiration_sec
 );`,

@@ -65,6 +65,10 @@ export function getContractState(state){
     return state.contractState;
 }
 
+export function getTrustedDapps(state){
+    return state.trustedDapps;
+}
+
 
 
 

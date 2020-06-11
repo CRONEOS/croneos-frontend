@@ -62,6 +62,9 @@
 
     </div>
 
+
+
+
     <div class="bg-secondary q-pb-xl">
       <div class="q-pa-sm text-white center-page-content">
         <h5 class="text-center text-weight-light">Background</h5>
@@ -80,6 +83,24 @@
         </p>
         <!-- <p>Croneos is looking for contributers (design infographics, website, community management, ...).</p> -->
 
+      </div>
+    </div>
+
+    <div class="bg-secondary q-pb-xl">
+      <div class="q-pa-sm text-white center-page-content">
+        <div class="q-pa-sm">
+          <h5 class="text-center text-weight-light">
+            Projects using Croneos
+          </h5>
+          <div class=" row items-start q-gutter-md" v-if="getTrustedDapps">
+            <trusted-dapp v-for="dapp in getTrustedDapps" :key="dapp.contract" :dapp="dapp" />
+          </div>
+          <div v-else>
+            <q-spinner size="25px"/>
+          </div>
+          <!-- <pre>{{getTrustedDapps}}</pre> -->
+          
+        </div>
       </div>
     </div>
 
@@ -147,10 +168,13 @@
       </div>
     </div>
 
+
+
+
     <div class="q-pa-sm text-white">
-    <div class="text-center q-mt-md" style="margin-bottom: -35px">
-      <q-img src="statics/images/tokens/cron.png" contain style="height:60px; width:60px"/>
-    </div>
+      <div class="text-center q-mt-md" style="margin-bottom: -35px">
+        <q-img src="statics/images/tokens/cron.png" contain style="height:60px; width:60px"/>
+      </div>
       <h5 class="text-center text-weight-light">CRON Token</h5>
     </div>
 
@@ -188,25 +212,11 @@
 
     <div style="height:200px"></div>
 
-    <!-- <div class="row justify-center overflow-hidden" style="">
-        <span>Schedule contract actions for execution in the future. Receive rewards by executing scheduled tasks.</span>
-    </div>
 
-    <div class="row justify-center overflow-hidden" style="">
-        <span>Schedule jobs from whitin your contract with an easy c++ api. Pay an optional  fee to incentivize the miners.</span>
-    </div>
 
-    <div class="row justify-center overflow-hidden" style="">
-        <span>Use the UI to manage your jobs.</span>
-    </div>
 
-    <div class="row justify-center overflow-hidden" style="">
-      <ul>
-        <li>dapps submit scheduled actions to the pool</li>
-        <li>dapps pay a fee (similar to eth ) for each scheduled job</li>
-        <li>miners execute the scheduled jobs and receive rewards (CRON token and %  fee)</li>
-      </ul>
-    </div> -->
+
+
   </q-page>
 </template>
 
@@ -215,11 +225,13 @@
 <script>
 import { mapGetters } from "vuex";
 import gasTokens from "components/gas-tokens";
+import trustedDapp from "components/trusted-dapp";
 
 export default {
   name: "PageIndex",
   components: {
-    gasTokens
+    gasTokens,
+    trustedDapp
   },
   data() {
     return {
@@ -232,7 +244,8 @@ export default {
     ...mapGetters({
       getAccountName: "ual/getAccountName",
       getNumberOfCronjobs: "app/getNumberOfCronjobs",
-      getContractState: "app/getContractState"
+      getContractState: "app/getContractState",
+      getTrustedDapps: "app/getTrustedDapps"
     })
   },
   methods: {

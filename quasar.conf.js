@@ -58,6 +58,7 @@ module.exports = function (ctx) {
         'QTooltip',
         'QSpace',
         'QCardSection',
+        'QCardActions',
         'QSpinner',
         'QSpinnerDots',
         'QInput',
