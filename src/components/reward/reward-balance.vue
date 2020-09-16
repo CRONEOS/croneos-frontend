@@ -86,7 +86,7 @@ export default {
 
       let res = await this.$store.dispatch("ual/transact", { actions: actions, disable_signing_overlay: true });
       if(res){
-        setTimeout(()=>{this.$store.dispatch("user/fetchRewards", this.getAccountName)}, 1000);
+        setTimeout(()=>{this.$store.dispatch("user/fetchRewards", this.getAccountName)}, 2200);
       }
       this.is_withdrawing=false;
     }
