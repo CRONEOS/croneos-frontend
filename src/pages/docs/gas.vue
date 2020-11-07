@@ -18,8 +18,8 @@
 
     <div class="warning-box q-mb-md">If you set a gas fee and you don't have enough funds in your deposits and you have disabled auto_pay_gas (default) the croneos contract will assert.</div>
 
-    <p>You can pay upfront by transfering a valid gas token to the contract "{{getConfig.cron_contract}}" with memo "deposit gas". Be sure there is only 1 space between the words. It's also possible to top up the gas deposits for an other account. Also you can use the <router-link to="/schedule" tag="a" class="text-link inline-block" style="display:block">UI</router-link> to add and/or withdraw your deposits.</p>
-    <code-block :code="`//transfer memo \ndeposit gas\ndeposit gas:accountname //no spaces before/after :`" :copy="false" style="max-width:800px"/>
+    <p>You can pay upfront by transfering a valid gas token to the contract "{{getConfig.cron_contract}}" with memo "deposit". It's also possible to top up the gas deposits for an other account. Also you can use the <router-link to="/schedule" tag="a" class="text-link inline-block" style="display:block">UI</router-link> to add and/or withdraw your deposits.</p>
+    <code-block :code="`//transfer memo \ndeposit\ndeposit:accountname //no spaces before/after :`" :copy="false" style="max-width:800px"/>
 
     <div class="info-box q-mb-md">Funds from your gas deposits can be withdrawn at any time. Gas from cancelled and/or expired jobs will be refunded to your deposits.</div>
 
